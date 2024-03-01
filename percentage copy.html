@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            height:90vh;
+        }
+    </style>
+</head>
+<body>
+         <h1>Calculate parcentage</h1>
+         <div class="subject">
+            <h2 id="eng">English <span id="sub1"></span></h2>
+            <h2 id="hi">Hindi <span id="sub2"></span></h2>
+            <h2 id="ma">Math <span id="sub3"></span></h2>
+            <h2 id="sc">Science <span id="sub4"></span></h2>
+            <h2 id="soc">Social Science <span id="sub5"></span></h2>
+         </div> 
+           <div class="parcentage">
+            <p>Your percentage score is: <span id="parcent"></span></p>
+           </div>
+        <button onclick="calculat()">Calculate</button>
+
+
+        <script>
+           var engElement = document.getElementById("eng").textContent
+           var hiElement = document.getElementById("hi").textContent
+           var maElement = document.getElementById("ma").textContent
+           var scElement = document.getElementById("sc").textContent
+           var socElement = document.getElementById("soc").textContent
+
+           var sub1 = document.getElementById("sub1")
+           var sub2 = document.getElementById("sub2")
+           var sub3 = document.getElementById("sub3")
+           var sub4 = document.getElementById("sub4")
+           var sub5 = document.getElementById("sub5")
+
+           var engMarks=0
+           var hiMarks=0
+           var maMarks=0
+           var scMarks=0
+           var socMarks=0
+           var marks =[]
+           var parcent2=0
+           function calculat(){
+            while(true){
+                engMarks = parseInt(prompt(`Enter your marks in subject ${engElement}: `))
+                if(engMarks>100 || engMarks<0){
+                    alert("Please enter valid range in marks (0 to 100)")
+                }
+                else{
+                    break
+                }
+               
+            }
+            while(true){
+                hiMarks = parseInt(prompt(`Enter your marks in subject ${hiElement}: `))
+                if(hiMarks>100 || hiMarks<0){
+                    alert("Please enter valid range in marks (0 to 100)")
+                }
+                else{
+                    break
+                }
+
+            }
+            while(true){
+                maMarks = parseInt(prompt(`Enter your marks in subject ${maElement}: `))
+                if(maMarks>100 || maMarks<0){
+                    alert("Please enter valid range in marks (0 to 100)")
+                }
+                else{
+                    break
+                }
+                
+            }
+            while(true){
+                scMarks = parseInt(prompt(`Enter your marks in subject ${scElement}: `))
+                if(scMarks>100 || scMarks<0){
+                    alert("Please enter valid range in marks (0 to 100)")
+                }
+                else{
+                    break
+                }
+                
+            }
+
+            while(true){                
+                socMarks = parseInt(prompt(`Enter your marks in subject ${socElement}: `))
+                if(socMarks>100 || socMarks<0){
+                    alert("Please enter valid range in marks (0 to 100)")
+                }
+                else{
+                    break
+                }
+            }
+
+              sub1.textContent = engMarks
+              sub2.textContent = hiMarks
+              sub3.textContent = maMarks
+              sub4.textContent = scMarks
+              sub5.textContent = socMarks
+          let totalSum = engMarks+hiMarks+maMarks+scMarks+socMarks
+
+          parcent2 = totalSum/500*100
+
+           console.log(engElement,":",engMarks)
+           console.log(hiElement,":",hiMarks)
+           console.log(maElement,":",maMarks)
+           console.log(scElement,":",scMarks)
+           console.log(socElement,":",socMarks)
+           console.log(totalSum)
+           console.log(parcent2)
+           
+           calculaparc()
+
+           }
+           function calculaparc(){
+            document.getElementById("parcent").innerHTML = parcent2
+           }
+           
+
+           
+        </script>
+</body>
+</html>
