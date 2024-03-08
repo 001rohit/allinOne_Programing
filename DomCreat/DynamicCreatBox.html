@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DomCreat</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        #root{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+        .box{
+            width:300px;
+            height:300px;
+            border:1px solid black;
+            background: dimgray;
+            margin:10px;
+        }
+        button{
+            padding: 10px;
+            font-size:20px;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="check()">click</button>
+    <div id="root"></div>
+    <script>
+           let root = document.getElementById("root")
+           function check(){
+            for(let i=1;i<2;i++){
+                let div = document.createElement("div")
+                div.className = "box"
+                root.appendChild(div)
+            }
+           }
+    </script>
+</body>
+</html>
