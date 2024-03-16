@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>guessing Name</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height:95vh;
+        }
+
+    </style>
+</head>
+<body>
+          <div class="wrapper">
+            <input type="text" id="value">
+            <button id="btn">Click</button>
+            <div class="box">
+                <div id="userBox">
+                    <h1>User Box:<span id="user"></span></h1>
+                </div>
+                <div id="systBox">
+                    <h1>System Box:<span id="syst"></span></h1>
+                </div>
+            </div>
+            <div id="res"></div>
+        </div>
+        <script>
+                 let nameList = ["rohit","manish"]
+                 let btn = document.getElementById("btn")
+                 let showRes = document.getElementById("res")
+                 let user = document.getElementById("user")
+                 let syst = document.getElementById("syst")
+                 btn.onclick = function(){
+                    //  let radomName = nameList[Math.floor(Math.random()*nameList.length)]
+                    //  let value = document.getElementById("value").value
+                    //  console.log(radomName)
+                    //  showRes.textContent = `${value} : ${randomName}`
+                    //  console.log(`The name is : ${value}`)
+                    //  if(randomName==value){
+
+                     }
+                     btn.addEventListener("click",()=>{
+                        let randomName = nameList[Math.floor(Math.random()*nameList.length)]
+                     let value = document.getElementById("value").value.toLowerCase()
+                     console.log(randomName)
+                     console.log(value);
+                     user.textContent = ` ${value}`
+                     syst.textContent = ` ${randomName}`
+                     if(value!=randomName){
+                        showRes.textContent = " Name is Not Match"
+                     }
+                     else{
+                        showRes.textContent = " Name is Match  🤗🤗🫡"
+                     }
+                     })
+                 
+        </script>
+</body>
+</html>
