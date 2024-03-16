@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: #000;
+        }
+        .wrapper{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height:100vh;
+        }
+        #emoji{
+            font-size: 8rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+       <div class="wrapper">
+        <div id="emoji">😉</div>
+       </div>
+       <script>
+        let emoji = document.getElementById("emoji")
+        let emojiList = [
+            '😉','🙂','🤪','😎','😱','🥰','😇','🫡','😜','😁','🙂','🤠','🥵','🤑','😍','😤','🤗','🤔','🫡','😫'
+        ]
+        // emoji.addEventListener("mouseover",()=>{
+        //     let  random = emojiList[Math.floor(Math.random()*emojiList.length)]
+        //     emoji.innerHTML = random
+        // })
+        function emojiFun(){
+            let  random = emojiList[Math.floor(Math.random()*emojiList.length)]
+            emoji.innerHTML = random
+            
+        }
+        setInterval(emojiFun, 1000);
+       </script>
+</body>
+</html>
