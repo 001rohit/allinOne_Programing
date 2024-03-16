@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        #root{
+            font-size:2rem;
+            font-weight: bold;
+            color :white;
+        }
+    </style>
+</head>
+<body>
+
+        <div id="root"></div>
+        <button id="btn">Button</button>
+        <script>
+            let root =document.getElementById("root")
+            let btn = document.getElementById("btn")
+            btn.addEventListener("click",()=>{
+                let colorList = ["red","green","yellow","blue","lime","brown"]
+                let randomColor1 = colorList[Math.floor(Math.random()*colorList.length)]
+                document.body.style.background = randomColor1
+                root.innerHTML = `Index value is ${colorList.indexOf(randomColor1)} : color name is ${randomColor1}`
+                console.log(`index value ${colorList.indexOf(randomColor1)}: color name ${randomColor1}`)
+                //   randomColor()
+            })
+            function randomColor(){
+                for(let i=0;i<colorList.length;i++){
+                    console.log(colorList[i])
+                }
+            }
+            
+        </script>
+</body>
+</html>
