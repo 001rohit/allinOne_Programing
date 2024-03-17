@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image pop Effect</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 80vh;
+        }
+        .box{
+            width:350px;
+            height:350px;
+            border: 1px solid black;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+        img{
+            transition: all 0.5s;
+            width:100%;
+            height:auto;
+            /* position: relative; */
+            position: absolute;
+        }
+
+       .content{
+        position: absolute;
+        display: flex;
+        bottom: 0;
+        left: 0;
+        /* top:250px; */
+        /* left:50px; */
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height:25%;
+        width:100%;
+        color: white;
+        background: #000;
+        transform: translateY(100%);
+        transition: all 0.5s;
+       }
+       .box:hover img{
+        transform: translateY(-60px);
+       }
+       .box:hover .content{
+        transform: translateY(10%);
+       }
+    </style>
+</head>
+<body>
+         <div class="box">
+            <div class="imgBox">
+                <img src="https://static.vecteezy.com/system/resources/previews/022/715/778/non_2x/cute-cool-boy-dabbing-pose-cartoon-icon-illustration-people-fashion-icon-concept-isolated-generat-ai-free-photo.jpg" alt="">
+                <div class="content">
+                    <h1>Hi my name is amole</h1>
+                </div>
+            </div>
+         </div>
+</body>
+</html>
