@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* height:95vh; */
+            flex-wrap: wrap;
+        }
+        .container{
+            margin: 10px;
+            width:350px;
+            height:300px;
+            overflow: hidden;
+            position: relative;
+            transform: all 0.5s;
+
+        }
+        img{
+            width:100%;
+        }
+        .content{
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            bottom: 0;
+            left: 0;
+            flex-direction: column;
+             width:100%;
+             color: white;
+             transform: translateY(100%);
+             transition: all 0.5s ease-out;
+             
+            }
+            h1{
+                margin: 0;
+            }
+            .container:hover .content{
+                height:390px;
+                transform: translateY(0);
+                background: #000;
+                opacity: 0.7;
+            }
+            .btn1{
+                padding: 5px;
+                font-size:20px;
+                font-weight: bold;
+                cursor: pointer;
+                margin-top:25px;
+            }
+            h1,#status,#btn1{
+                padding: 5px;
+            }
+            h1{
+                text-transform: uppercase;
+            }
+            #status{
+                font-size:20px;
+                text-transform: uppercase;
+            }
+            </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://cdn.pixabay.com/photo/2023/04/06/05/33/cute-boy-cartoon-7902892_960_720.jpg" alt="">
+       <div class="content">
+        <h1>Jack</h1>
+        <div class="status">Friend</div>
+        <button class="btn1">Add</button>
+       </div>
+    </div>
+
+    <div class="container">
+        <img src="https://img.freepik.com/premium-photo/cute-boy-pixar-style-cartoon-3d-illustration-generative-ai_808510-252.jpg" alt="">
+       <div class="content">
+        <h1>Jimmy</h1>
+        <div class="status">Friend</div>
+        <button class="btn1">Add</button>
+       </div>
+    </div>
+
+    <div class="container">
+        <img src="https://img.freepik.com/free-photo/cartoon-character-with-yellow-jacket-sunglasses_71767-101.jpg?size=338&ext=jpg&ga=GA1.1.735520172.1710633600&semt=ais" alt="">
+       <div class="content">
+        <h1>Riya</h1>
+        <div class="status">Friend</div>
+        <button class="btn1">Add</button>
+       </div>
+    </div>
+
+    <div class="container">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKVSV_SjWU9snGaD2Vd04FseRlpRJuE5z_BIAts3EQFArVykSUTvFRVXZ58Ki1wrBpLgg&usqp=CAU" alt="">
+       <div class="content">
+        <h1>ronny</h1>
+        <div class="status">Friend</div>
+        <button class="btn1">Add</button>
+       </div>
+    </div>
+
+
+    <script>
+        let btn1 = document.querySelectorAll(".btn1")
+        let status = document.querySelectorAll(".status")
+        btn1[0].addEventListener("click",()=>{
+            if(btn1[0].innerText=="Add"){
+                btn1[0].innerHTML = "Remove"
+                status[0].innerHTML ="Stranger"
+            }
+            else if(btn1[0].innerText =="Remove"){
+                btn1[0].innerHTML = "Add"
+                status[0].innerHTML ="Friend"
+
+            }
+        })
+
+        btn1[1].addEventListener("click",()=>{
+            if(btn1[1].innerText=="Add"){
+                btn1[1].innerHTML = "Remove"
+                status[1].innerHTML ="Stranger"
+            }
+            else if(btn1[1].innerText =="Remove"){
+                btn1[1].innerHTML = "Add"
+                status[1].innerHTML ="Friend"
+
+            }
+        })
+
+        btn1[2].addEventListener("click",()=>{
+            if(btn1[2].innerText=="Add"){
+                btn1[2].innerHTML = "Remove"
+                status[2].innerHTML ="Stranger"
+            }
+            else if(btn1[2].innerText =="Remove"){
+                btn1[2].innerHTML = "Add"
+                status[2].innerHTML ="Friend"
+
+            }
+        })
+
+        btn1[3].addEventListener("click",()=>{
+            if(btn1[3].innerText=="Add"){
+                btn1[3].innerHTML = "Remove"
+                status[3].innerHTML ="Stranger"
+            }
+            else if(btn1[3].innerText =="Remove"){
+                btn1[3].innerHTML = "Add"
+                status[3].innerHTML ="Friend"
+
+            }
+        })
+
+        btn1[4].addEventListener("click",()=>{
+            if(btn1[4].innerText=="Add"){
+                btn1[4].innerHTML = "Remove"
+                status[4].innerHTML ="Stranger"
+            }
+            else if(btn1[4].innerText =="Remove"){
+                btn1[4].innerHTML = "Add"
+                status[4].innerHTML ="Friend"
+
+            }
+        })
+
+        
+
+    </script>
+</body>
+</html>
