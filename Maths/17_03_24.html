@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         height:90vh;
+         flex-wrap:wrap;
+         color: white;
+         /* text-transform: uppercase; */
+        }
+        .box-size{
+            overflow: hidden;
+            display: flex;
+            background: white;
+        }
+        .box{
+         width:200px;
+         margin:5px;
+         padding: 10px;
+         text-align: center;
+         background: black;
+         border:1px solid white;
+        }
+        h1{
+            margin: 0;
+        }
+    .tab,.tab1{
+        border:1px solid white;
+        font-size: 2rem;
+        /* padding: 5px ; */
+        margin: 3px;
+    }
+    #btn1,#btn2,#btn3{
+        padding: 5px;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        border: 1px solid white;
+    }
+    input{
+        margin-bottom:20px;
+        padding: 5px;
+        font-size:15px;
+    }
+    .input-box{
+        margin-bottom: 25px;;
+    }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="box-size">
+
+            <div class="box">
+                <h1>Table </h1>
+                <div class="input-box">
+                <input type="text" id="tab1">
+                <buttton id="btn1">check</buttton>
+            </div>
+                <div id="root1"></div>
+            </div>
+
+            <div class="box"s>
+                <h1>squares</h1>
+                <div class="input-box">
+                <input type="text" id="tab2">
+                <buttton id="btn2">check</buttton>
+            </div>
+                <div id="root2"></div>
+            </div>
+
+            <div class="box">
+                <h1>qube </h1>
+                <div class="input-box">
+                <input type="text" id="tab3">
+                <buttton id="btn3">check</buttton>
+            </div>
+                <div id="root3"></div>
+            </div>
+          
+        </div>
+    </div>
+    <script>
+        // show Result
+        let root1 = document.getElementById("root1")
+        let root2 = document.getElementById("root2")
+        let root3 = document.getElementById("root3")
+        
+        // inputValue
+        // let input2 = parseInt(document.getElementById("tab2").value)
+        // let input3 = parseInt(document.getElementById("tab3").value)
+        
+        // button
+        let btn1 = document.getElementById("btn1")
+        let btn2 = document.getElementById("btn2")
+        let btn3 = document.getElementById("btn3")
+        
+        
+        btn1.addEventListener("click",()=>{
+
+            let input1 = parseInt(document.getElementById("tab1").value)
+            if(btn1.innerText =="check"){
+                btn1.innerHTML = "remove"
+             for(let i=1;i<=10;i++){
+                 let div = document.createElement("div")
+                 div.className ="tab"
+                 for(let j=1;j<=input1;j++){
+                     div.innerHTML = `${j} * ${i} = ${i*j}`
+                     root1.appendChild(div)
+                    }
+             }
+            }
+            else if(btn1.innerText =="remove"){
+                btn1.innerHTML = "check"
+                root1.remove()
+            }
+        console.log(typeof(input1))
+         console.log("hellow1")
+     })
+
+       btn2.addEventListener("click",()=>{
+        if(btn2.innerText =="check"){
+                btn2.innerHTML = "remove"
+            }
+            else if(btn2.innerText =="remove"){
+                btn2.innerHTML = "check"
+            }
+        let input2 = parseInt(document.getElementById("tab2").value)
+           for(let j=input2;j<=input2;j++){
+               let div = document.createElement("div")
+               div.className ="tab1"
+                   div.innerHTML = `${j} * ${j} = ${j*j}`
+                   root2.appendChild(div)
+           }
+       })
+ 
+       btn3.addEventListener("click",()=>{
+        if(btn3.innerText =="check"){
+                btn3.innerHTML = "remove"
+            }
+            else if(btn3.innerText =="remove"){
+                btn3.innerHTML = "check"
+            }
+        let input3 = parseInt(document.getElementById("tab3").value)
+
+           for(let j=input3;j<=input3;j++){
+               let div = document.createElement("div")
+               div.className ="tab1"
+                   div.innerHTML = `${j} * ${j} *${j}= ${j*j*j}`
+                   root3.appendChild(div)
+           }
+       })
+
+
+    </script>
+</body>
+</html>
