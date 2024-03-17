@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        #btn ,button{
+            padding: 10px;
+            font-size:20px;
+            cursor: pointer;
+            margin:5px;
+        }
+        #root,h2{
+            font-size:2rem;
+        }
+        #root{
+            letter-spacing: 6px;
+        }
+        
+        span{
+            padding: 10px;
+        }
+        ol{
+            width:350px;
+            /* text-align: center; */
+            border: 1px  solid black;
+            background: sandybrown;
+        }
+        ol li {
+            margin-left:25px;
+            border-bottom: 5px solid white;
+           padding: 5px 0;
+        font-size: 25px;
+        margin: 10px;
+        text-align: right;
+       }
+    </style>
+</head>
+<body>
+    <button id="btn">Random Password</button>
+    <ol>
+        <li>small letter alphabet <br>
+            <button class="add">Add</button>
+        </li>
+        <li>Capital letter alphabet <br>
+             <button  class="add">Add</button>
+            </li>
+        <li>Symbole and spacial charecter  <br>
+            <button  class="add">Add</button>
+         </li>
+        <li>Number <br>
+             <button  class="add">Add</button>
+         </li>
+    </ol>
+    <div ><h2>Random Passsword Genrate: <span id="root"></span></h2></div>
+    <script>
+         let root1 = document.getElementById("root")
+         let btn = document.getElementById("btn")
+         let  btn1 = document.querySelectorAll(".add")
+         let alphaList = "abcdefghijklm"
+         let capitalLetter = "ABCDEFGHIJKLM"
+         let symbole = "$#@%&*"
+         let numList  = [1,2,3,4,5,6,6,7,8,9,0]
+         let code="";
+         
+         btn1[0].addEventListener("click",()=>{
+            if(btn1[0].innerText == "Add"){
+                btn1[0].innerHTML = "Remove"
+            }
+            else if(btn1[0].innerText == "Remove"){
+                btn1[0].innerHTML = "Add"
+            }
+         })
+         btn1[1].addEventListener("click",()=>{
+            if(btn1[1].innerText == "Add"){
+                btn1[1].innerHTML = "Remove"
+            }
+            else if(btn1[1].innerText == "Remove"){
+                btn1[1].innerHTML = "Add"
+            }
+         })
+         btn1[2].addEventListener("click",()=>{
+            if(btn1[2].innerText == "Add"){
+                btn1[2].innerHTML = "Remove"
+            }
+            else if(btn1[2].innerText == "Remove"){
+                btn1[2].innerHTML = "Add"
+            }
+         })
+         btn1[3].addEventListener("click",()=>{
+            if(btn1[3].innerText == "Add"){
+                btn1[3].innerHTML = "Remove"
+            }
+            else if(btn1[3].innerText == "Remove"){
+                btn1[3].innerHTML = "Add"
+            }
+         })
+         
+         btn.addEventListener("click",()=>{
+            root()
+         })
+         function root(){
+        let randomAlpha1 = alphaList[Math.floor(Math.random()*alphaList.length)]
+        let randomNum = numList[Math.floor(Math.random()*numList.length)]
+        let randomSym = symbole[Math.floor(Math.random()*symbole.length)]
+        let randomCapital = capitalLetter[Math.floor(Math.random()*capitalLetter.length)]
+        let  code1=randomAlpha1+randomNum+randomSym+randomCapital
+        for(let i=0;i<4;i++){
+          code =code1
+        }
+           console.log(code)
+           root1.textContent = code
+           root1.style.background = "black"
+           root1.style.color = "white"
+        }
+    </script>
+</body>
+</html>
