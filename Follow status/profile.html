@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height:100vh;
+            flex-direction: column;
+        }
+        .box-contain{
+            border: 1px solid black;
+            background: white;
+
+        }
+        .box-contain h1{
+            margin-left: 10px;
+        }
+        .wrapper{
+            border: 1px solid black;
+            background: #000;
+        }
+        .profile{
+            align-items: center;
+                flex-direction: column;
+        }
+        .profile_pic{
+            width:450px;
+            margin: 5px 0;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: white;
+            transition: all 0.5s;
+        }
+        .profile_pic:hover{
+            background: hsl(0, 0%, 70%);
+        }
+        .profile-size{
+            display: flex;
+            align-items: center;
+            gap: 170px;
+
+        }
+        img{
+            width:80px;
+            height:80px;
+            border-radius: 100%;
+            padding: 5px;
+            margin: 5px;
+            background-position: center;
+            object-fit: cover;
+            background: #000;
+            margin-left: 20px;
+        }
+        
+        .btn{
+            padding: 10px;
+            font-size: 15px;
+            border-radius: 15px;
+            transition:all 0.2s;
+            cursor: pointer;
+             /* margin-left: 150px; */
+        }
+       .profile-detail {
+        display: flex;
+       }
+        
+        .more p{
+            color: white;
+            margin-left:25px;
+        }
+        .contain-profile{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-left: 10px;
+            line-height: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box-contain">
+            <h1>who to Follow</h1>
+        </div>
+
+        <div class="profile">
+            
+            <div class="profile_pic">
+                <div class="profile-size">
+                    <div class="profile-detail">
+                <img src="https://www.pngitem.com/pimgs/m/106-1068071_black-person-png-black-man-business-png-transparent.png" alt="">
+                 <div class="contain-profile">
+                <h3>Adom</h3>
+                 <p>@adom</p>
+                </div>
+                </div>
+                <button class="btn">Follow</button>
+            </div>
+            </div>
+
+
+            <div class="profile_pic">
+                <div class="profile-size">
+                    <div class="profile-detail">
+                <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/media_bank/202309/elon-musk-252648408-16x9.jpg?VersionId=9KYZpqpoY3WvH8eVZg54mmkpTGfvPCWj&size=690:388" alt="">
+                 <div class="contain-profile">
+                <h3>Adom</h3>
+                 <p>@adom</p>
+                </div>
+                </div>
+                <button class="btn">Follow</button>
+            </div>
+            </div>
+
+            <div class="profile_pic">
+                <div class="profile-size">
+                    <div class="profile-detail">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoKJPxxwPeNvISnBbZsZHe887Ws0FnrL7o0w&usqp=CAU" alt="">
+                 <div class="contain-profile">
+                <h3>Adom</h3>
+                 <p>@adom</p>
+                </div>
+                </div>
+                <button class="btn">Follow</button>
+            </div>
+            </div>
+
+            
+            
+        </div>
+
+        <div class="more">
+            <p>Show  More...</p>
+        </div>
+    </div>
+
+    <script>
+        let btn = document.querySelectorAll(".btn")
+       
+        btn.forEach((btn)=>{
+                btn.addEventListener("click",()=>{
+                  if(btn.innerText=="Follow"){
+                    btn.innerHTML="Unfollow"
+                    btn.style.background ="black"
+                    btn.style.color = "white"
+                  }
+                  else if(btn.innerText=="Unfollow"){
+                    btn.innerHTML = "Follow"
+                    btn.style.background ="white"
+                    btn.style.color = "black"
+                  }
+            }) 
+            })
+      
+    </script>
+</body>
+</html>
