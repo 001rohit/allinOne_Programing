@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper{
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            flex-wrap: wrap;
+        }
+        .profile-box{
+            width:300px;
+            border: 1px solid black;
+            /* padding: 15px 10px; */
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            Padding-bottom:20px;
+            margin: 5px;
+        }
+        .btn{
+            padding: 10px;
+            font-size:18px;
+            width:200px;
+        }
+        img{
+            width:100%;
+        }
+        .status{
+            font-size:20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+            <div class="wrapper">
+                <div class="profile-box">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyon5csSI3bt8b5pVrtLz3_9vo0T6cMRC0EQ&usqp=CAU" alt="">
+                    <div class="contain-box">
+                        <h1>Anderson</h1>
+                        <p class="status">Friend</p>
+                    </div>
+                    <button class="btn">Add</button>
+                </div>
+
+                <div class="profile-box">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyon5csSI3bt8b5pVrtLz3_9vo0T6cMRC0EQ&usqp=CAU" alt="">
+                    <div class="contain-box">
+                        <h1>Anderson</h1>
+                        <p class="status">Friend</p>
+                    </div>
+                    <button class="btn">Add</button>
+                </div>
+
+                <div class="profile-box">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyon5csSI3bt8b5pVrtLz3_9vo0T6cMRC0EQ&usqp=CAU" alt="">
+                    <div class="contain-box">
+                        <h1>Anderson</h1>
+                        <p class="status">Friend</p>
+                    </div>
+                    <button class="btn">Add</button>
+                </div>
+            </div>
+            <script>
+                let btn = document.querySelectorAll(".btn")
+                let status = document.querySelectorAll(".status")
+
+                btn[0].addEventListener("click",()=>{
+                    if(btn[0].innerText=="Add"){
+                        btn[0].innerText="Remove"
+                        status[0].innerText="Stranger"
+                    }
+                    else if(btn[0].innerText=="Remove"){
+                        btn[0].innerText="Add"
+                        status[0].innerText="Friend"
+                    }
+                })
+
+                btn[1].addEventListener("click",()=>{
+                    if(btn[1].innerText=="Add"){
+                        btn[1].innerText="Remove"
+                        status[1].innerText="Stranger"
+                    }
+                    else if(btn[1].innerText=="Remove"){
+                        btn[1].innerText="Add"
+                        status[1].innerText="Friend"
+                    }
+                })
+
+                btn[2].addEventListener("click",()=>{
+                    if(btn[2].innerText=="Add"){
+                        btn[2].innerText="Remove"
+                        status[2].innerText="Stranger"
+                    }
+                    else if(btn[2].innerText=="Remove"){
+                        btn[2].innerText="Add"
+                        status[2].innerText="Friend"
+                    }
+                })
+
+                // btn[0].addEventListener("click",()=>{
+                //     if(btn[0].innerText=="Add"){
+                //         btn[0].innerText="Remove"
+                //         status[0].innerText="Stranger"
+                //     }
+                //     else if(btn[0].innerText=="Remove"){
+                //         btn[0].innerText="Add"
+                //         status[0].innerText="Friend"
+                //     }
+                // })
+                // btn.forEach((btn)=>{
+                //     btn.addEventListener("click",()=>{
+                //         if(btn.innerText =="Add"){
+                //             btn.innerText ="Remove"
+                //             status.innerHTML = "Stranger"
+                //         }
+                //         else if(btn.innerText =="Remove"){
+                //          btn.innerText="Add"
+                //          status.innerHTML = "Friend"
+                //         }
+                        // status1()
+                    // })
+                // })
+             function status1(){
+                status.forEach((val)=>{
+                    if(val.innerText=="Friend"){
+                        val.innerText="Stranger"
+                    }
+                    else if(val.innerText =="Stranger"){
+                        val.innerText = "Friend"
+                    }
+                })  
+             }
+
+            </script>
+</body>
+</html>
