@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height:100vh;
+            transition: all 1s;
+        }
+        button{
+            padding: 10px;
+            font-size:20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+      <div class="wrapper">
+        <button id="btn">Mode</button>
+    </div>
+    <script>
+        let body = document.body
+        let btn = document.getElementById("btn")
+        btn.addEventListener("click",()=>{
+            if(btn.innerText=="Mode"){
+                btn.innerHTML = "Mode Change"
+                body.style.background = "black"
+            }
+            else if(btn.innerText=="Mode Change"){
+                btn.innerHTML="Mode"
+                body.style.background = "white"
+            }
+        })
+    </script>
+</body>
+</html>
