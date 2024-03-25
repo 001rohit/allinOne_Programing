@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height:100vh;
+            flex-direction: column;
+        }
+        .wrapper{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .box1{
+            margin: 10px 35px;
+            width:300px;
+            height:300px;
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size:3rem;
+            border-radius:20px;
+        }
+        #res{
+            line-height: 5;
+            font-size:2rem;
+        }
+    </style>
+</head>
+<body>
+        <div class="wrapper">
+            <div class="box1" id="user">
+                user
+            </div>
+            <div class="box1" id="system">
+                system
+            </div>
+        </div>
+        <div id="res"></div>
+        <script>
+             
+                  let user = document.getElementById("user")
+                  let system = document.getElementById("system")
+                  let res = document.getElementById("res")
+                  let colorList = ["red","orange","yellow","green"]
+
+                  user.addEventListener("click",()=>{
+                    let randomColor = colorList[Math.floor(Math.random()*colorList.length)]
+                    let val = prompt("Choose the color:")
+                    user.style.background = val
+                    system.style.background = randomColor
+                    if(val==randomColor){
+                        res.innerHTML = "Congratulation your color is matched"
+                    }
+                    else{
+                        res.innerHTML = " your color is not matched"
+                        
+                    }
+                    console.log("hellow")
+                  })
+        </script>
+</body>
+</html>
