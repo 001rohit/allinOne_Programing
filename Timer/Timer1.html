@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        #root,#root1{
+            font-size:5rem;
+        }
+    </style>
+</head>
+<body>
+           <button id="root1">Start</button>
+           <div id="root"></div>
+           <img src="" id="img1" alt="">
+           <script>
+                let root1 = document.getElementById("root1")
+                let root = document.getElementById("root")
+                let img1 = document.getElementById("img1")
+               let count =4
+               let stop=0;
+                root1.addEventListener("click",()=>{
+                    root1.style.display = "none"
+                   timer()
+                    // myfun()
+                })
+            //     let count = 10;
+            function timer(){
+                let stop = setInterval(() => {
+                    if(count<=0){
+                        count--
+                        count=3
+                        root.innerHTML = count
+                    }
+                    else{
+                        count--
+                        root.innerHTML = count
+                    }
+                    if(count==0){
+                        root1.style.display = "block"
+                        root.style.display = "none"
+                        root1.innerHTML = "Go"
+                        // document.body.style.background = "white"
+                        img1.src = "https://t3.ftcdn.net/jpg/05/06/36/90/360_F_506369040_mSkshWpwV3hlcR6tdFgJBiZrR1Ka35MY.jpg"
+                    }
+                }, 1000);
+            }
+           
+           </script>
+</body>
+</html>
