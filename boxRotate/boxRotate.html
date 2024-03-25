@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            height:100vh;
+            align-items: center;
+            background: #000;
+        }
+        .wrapper{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+        .box{
+            margin:5px;
+            width:250px;
+            height:200px;
+            border: 1px solid black;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size:1.5rem;
+            background: white;
+            color: red;
+            font-weight: bold;
+            border-radius:20px;
+        }
+        .box:nth-child(1):hover{
+            animation:animat1 0.5s;
+            transition:all 0.5s;
+        }
+        .box:nth-child(2):hover{
+            animation:animat2 0.5s;
+            transition:all 0.5s;
+        }
+        .box:nth-child(3):hover{
+            animation:animat3 0.5s;
+            transition:all 0.5s;
+        }
+        .box:nth-child(4):hover{
+            animation:animat4 0.5s;
+            transition:all 0.5s;
+        }
+        @keyframes animat1 {
+            from{
+                transform: rotateY(0);
+            }
+            to{
+                transform: rotateY(95deg);
+            }
+        }
+
+        @keyframes animat2 {
+            from{
+                transform: rotateX(0);
+            }
+            to{
+                transform: rotateX(95deg);
+            }
+        }
+
+        @keyframes animat3 {
+            from{
+                transform: scale(1);
+            }
+            to{
+                transform:scale(1.5);
+            }
+        }
+
+        @keyframes animat4 {
+            from{
+                transform: rotate(0);
+            }
+            to{
+                transform: rotate(365deg);
+            }
+        }
+    </style>
+</head>
+<body>
+      <div class="wrapper">
+        <div class="box">Rotate Y direction</div>
+        <div class="box">Rotate X direction</div>
+        <div class="box">Zoom in and Zoom Out</div>
+        <div class="box">Rotate 360deg</div>
+      </div>
+</body>
+</html>

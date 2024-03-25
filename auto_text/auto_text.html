@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: #000;
+        }
+        .wrapper{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height:100vh;
+        }
+        h1,h2{
+            color: white;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Hellow javascript</h1>
+        <h2 id="text"></h2>
+    </div>
+    <script>
+        let array=["Javascript is a programing language",
+        "To make websites dynamic and attractive"
+    ]
+    let text = document.getElementById("text")
+        setInterval(() => {
+            let val = ""
+            for(let i=1;i<=1;i++){
+            let random = array[Math.floor(Math.random()*array.length)]
+            val+=random
+        }
+        text.innerHTML = val
+        text.style.color = "red"
+        text.style.fontSize = "30px"
+        text.style.border = "1px solid white"
+        text.style.padding = "20px"
+        text.style.background = "white"
+        }, 1000);
+
+    </script>
+</body>
+</html>
