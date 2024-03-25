@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height:95vh;
+            flex-direction: column;
+            background: orange;
+        }
+        .wrapper{
+            width:350px;
+            /* text-align: center;       */
+            font-size:20px;      
+            box-shadow: 2px 1px 10px;
+            border-radius:20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: white;
+        }
+        .img-contain{
+            text-align: center;
+            width:290px;
+        }
+        img{
+            width:150px;
+            height:150px;
+            object-fit: cover;
+            background-position: center;
+            margin-top:20px;
+            border-radius:100%;
+            padding: 14px;
+            box-shadow: 1px 1px 15px;
+        }
+        #name{
+            padding:20px 0;
+        }
+        #btn{
+            margin:20px;
+            padding: 10px;
+            font-size:15px;
+            font-weight:bold;
+        }
+        p{
+            margin:20px
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box">
+            <div class="img-contain">
+                <img src="https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg" id="img1" alt="">
+                <h2 id="name">John Doe</h2>
+            </div>
+            <hr>
+        </div>
+        <div class="contain-box">
+            <p>First Name:<span id="first-name">John</span></p>
+            <p>Last Name:<span id="last-name">Doe</span></p>
+            <p>Location<span id="location">Earth</span></p>
+            <p>Phone:<span id="phone">333-333-222</span></p>
+            <p>Email:<span id="email">test@gmail.com</span></p>
+        </div>
+        <button id="btn" onclick="btn('black')">Random Profile</button>
+    </div>
+    <script>
+        
+        let name = document.getElementById("name")
+        let first_name = document.getElementById("first-name")
+        let last_name = document.getElementById("last-name")
+        let location1 = document.getElementById("location")
+        let phone = document.getElementById("phone")
+        let email = document.getElementById("email")
+       let img = document.getElementById("img1")
+     
+       let array1 = 
+        {
+            Fname:"Rohit",
+            Lname:"Kumre",
+            img:"1.jpg",
+            location:"Bhopal(M.P)",
+            phone:986565765,
+            email:"kumrerohit7@gmail.com",
+        }
+        function btn(val){
+            first_name.innerHTML = " "+array1.Fname
+            last_name.innerHTML = " "+array1.Lname
+            img.src = array1.img
+            location1.innerHTML = " "+array1.location
+            phone.innerHTML = " "+array1.phone
+            email.innerHTML = " "+array1.email
+            document.body.style.background = val
+        }
+    </script>
+</body>
+</html>
