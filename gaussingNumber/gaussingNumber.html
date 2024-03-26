@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        setInterval(() => {
+            let  randomNum = Math.floor(Math.random()*10+1)
+            console.log(randomNum);
+                let user = prompt("Enter number (1 to 10): ")
+            user = Number(user)
+            
+            if(isNaN(user) || user==""){
+                alert("Please Enter valid number value")
+            }
+            else if( user>10){
+                alert("This is invalid number.Please Enter number (1 to 10)")
+            }
+            else{
+                 if(user>randomNum){
+                   alert("oop's you enter high.Please enter low value")
+                 }
+                 else if(user<randomNum){
+                    alert("oop's you enter low.Please enter high value")
+
+                 }
+                else if(user===randomNum){
+                    alert("you number is matched")
+                }
+                else{
+                    alert("your number is not matched")
+                }
+            }
+            }, 1000);
+            
+
+    </script>
+</body>
+</html>

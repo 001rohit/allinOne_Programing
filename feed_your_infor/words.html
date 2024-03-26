@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+           <div id="root"></div>
+           <script>
+            let list=[]
+            let root = document.getElementById("root")
+            let val1 =prompt("Enter your name: ")
+            let val2 =prompt("Enter your Email:")
+            let val3 =prompt("Enter your state: ")
+            let val4 =prompt("Enter your favourit color: ")
+            let val5 =prompt("Enter your favourit movie: ")
+            let val6 =prompt("Enter your favourit fruit: ")
+            let val7 =prompt("Enter your favourit game: ")
+            for(let i=1;i<=1;i++){
+                let div = document.createElement("div")
+                div.className ="My List"
+                div.innerHTML = `Name: ${val1} </br>
+                Email:${val2} </br>
+               State: ${val3} </br>
+                Favourit color:${val4} </br>
+                Movei:${val5} </br>
+                Fruite:${val6} </br>
+                Game:${val7}`
+            
+                root.appendChild(div)
+            }
+           </script>
+</body>
+</html>
