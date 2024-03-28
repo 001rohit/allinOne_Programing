@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height:100vh;
+    }
+    .box{
+        width:350px;
+       border-radius: 20px;
+       border: 1px solid black; 
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        transition: all 0.5s;
+    }
+    img{
+        /* width:100%; */
+        height:300px;
+        object-fit: cover;
+        background-size: cover;
+        background-position: center;
+
+    }
+    #btn{
+        padding: 10px;
+        font-size:20px;
+        border-radius:10px;
+        background: #000;
+        color: white;
+        margin-bottom:20px;
+    }
+  </style>
+</head>
+<body >
+      <div class="wrapper">
+        <div class="box">
+            <div class="imag-box">
+                <img src="https://img.freepik.com/free-vector/set-wild-animals_1308-29055.jpg" alt="animal" id="img1">
+                <h1 id="contain1">Animal</h1>
+                <button id="btn">Random contain</button>
+            </div>
+        </div>
+      </div>
+
+      <script>
+        let data = [
+            {name:"nature",img:"https://img.freepik.com/free-photo/autumn-forest-glows-with-vibrant-multi-colored-leaves-generative-ai_188544-40793.jpg"},
+            {name:"Mountain",img:"https://media.istockphoto.com/id/1341288649/photo/75mpix-panorama-of-beautiful-mount-ama-dablam-in-himalayas-nepal.jpg?s=612x612&w=0&k=20&c=0xb_bb-NBIxjiJL_kqY-o3dCjv2PmKFZfRjHcVEijDc="},
+            {name:"River",img:"https://static.vecteezy.com/system/resources/previews/001/406/190/non_2x/blue-river-running-through-a-forest-free-photo.jpeg"},
+            {name:"Animal",img:"https://img.freepik.com/free-vector/set-wild-animals_1308-29055.jpg"},
+        ]
+
+        // let [name,img]=data
+        // for(let val of data){
+        //     console.log(val.name)
+        //     console.log(val.img)
+        // }
+        let btn = document.getElementById("btn")
+        let img1 = document.getElementById("img1")
+        let contain1 = document.getElementById("contain1")
+        let RandomName;
+        btn.addEventListener("click",()=>{
+             RandomName = data[Math.floor(Math.random()*data.length)]
+            contain1.innerHTML = RandomName.name
+            img1.src = RandomName.img
+     })
+      </script>
+</body>
+</html>
