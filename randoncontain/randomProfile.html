@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height:100vh;
+        }
+        .profile-box{
+            width:300px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border: 1px solid black;
+            flex-direction: column;
+            box-shadow: 1px  1px 10px;
+            border-radius: 20px;
+        }
+        
+        img{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width:200px;
+            height:200px;
+            background-size: cover;
+            object-fit: contain;
+            border-radius: 100%;
+        }
+        img,h1{
+            margin: 0;
+        }
+        h2{
+            margin:5px
+        }
+        #btn{
+            margin:10px;
+            padding: 10px;
+            font-size:15px;
+            font-weight:bold;
+        }
+    </style>
+</head>
+<body>
+             <div class="wrapper">
+                <div class="profile-box">
+                    <div class="imgContain">
+                        <img src="https://image.shutterstock.com/image-photo/young-brazilian-man-isolated-on-260nw-2242569333.jpg" alt="" id="img1">
+                        <h1 id="name">Jack</h1>
+                        <hr>
+                    </div>
+                    <h2 id="title1">Front-end developer</h2>
+                    <button id="btn">Random profile</button>
+                </div>
+             </div>
+ <script>
+    let data =[
+        {name:"Mickal",profe:"back-end developer",img:"https://img.freepik.com/fotos-premium/homem-de-negocios-com-rosto-serio-homem-de-negocios-tem-um-retrato-de-negocios-de-aparencia-confiante-da-confianca-e-carisma-do-homem_474717-34252.jpg"},
+
+        {name:"joye",profe:"full-stack developer",img:"https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?size=626&ext=jpg&ga=GA1.1.1395991368.1711584000&semt=sph"},
+
+        {name:"Rick",profe:"junior developer",img:"https://www.shutterstock.com/image-photo/indoor-portrait-young-european-caucasian-260nw-1190324158.jpg"},
+
+        {name:"Riched",profe:"Serior developer",img:"https://img.freepik.com/premium-photo/man-portrait-serious-face-business-education-office-concept-fashion-portrait-bearded-handsome-businessman-stylish-unshaven-male-with-beard-mustache-trendy-hairdo-casual-denim-shirt_378307-7985.jpg"},
+    ]
+    let btn = document.getElementById("btn")
+    let name = document.getElementById("name")
+    let title1 = document.getElementById("title1")
+    let  img1= document.getElementById("img1")
+    let random;
+    btn.addEventListener("click",()=>{
+        random = data[Math.floor(Math.random()*data.length)]
+        name.innerHTML = random.name
+        title1.innerHTML = random.profe
+        img1.src = random.img
+    })
+ </script>
+</body>
+</html>
