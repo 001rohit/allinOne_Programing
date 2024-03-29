@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height:90vh;
+            transition: all 0.5s;
+        }
+        body.dark{
+            background: black;
+            color: white;
+           transition: background 0.5s linear,
+           color 0.5s linear;
+        }
+
+        .tg{
+            position: absolute;
+            top:10px;
+            right:10px;
+        }
+        .box{
+            width:400px;
+            border: 1px solid white;
+            padding: 10px;
+            box-shadow: 1px 5px  15px 10px white;
+        }
+        label{
+            user-select: none;
+            cursor: pointer;
+            display: inline-block;
+            width:50px;
+            height:50px;
+            border-radius: 100%;
+            background: rgb(171, 17, 213);
+        }
+        body.dark label{
+            background: white;
+        }
+        input{
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+        <div class="wrapper">
+            <div class="tg">
+            <input type="checkbox" id="toggle">
+            <label for="toggle" id="toggle"></label>
+        </div>
+            <div class="box">
+                <h1>Lorem ipsum dolor sit amet.</h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque, repellendus iste? Ea natus ex architecto quam. Beatae quod vel voluptatum earum porro. Asperiores, sed exercitationem?</p>
+            </div>
+        </div>
+        <script>
+            let toggle = document.getElementById("toggle")
+            toggle.addEventListener("change",(e)=>{
+                document.body.classList.toggle("dark",e.target.chacked)
+            })
+        </script>
+</body>
+</html>
