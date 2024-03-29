@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            .wrapper{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height:90vh;
+            }
+            .box{
+                width:250px;
+                text-align: center;
+                border: 1px solid black;
+                padding: 10px;
+                margin: 20px;
+                /* height:350px; */
+            }
+            #pro1{
+                display: flex;
+                margin:5px 0;
+                text-transform: capitalize;
+            }
+            #val{
+                width:200px;
+                padding: 10px;
+                font-size:20px;
+            }
+            #btn,#add1{
+                padding: 10px;
+                margin: 10px;
+                text-transform: capitalize;
+                font-weight: bold;
+                font-size:15px;
+            }
+            img{
+                width:100%;
+                margin: 0;
+                height:250px;
+                object-fit: cover;
+
+            }
+            h1,h2{
+                margin: 0;
+            }
+            .imgBox{
+                width:250px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            #res{
+                display: none;
+            }
+            
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div id="profile" class="box">
+            <img src="https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-859.jpg?size=338&ext=jpg&ga=GA1.1.1803636316.1711670400&semt=ais" alt="" id="img2">
+            <h1 id="pro1">find your friend </h1>
+            <input type="text" id="val" placeholder="Enter name">
+            <button id="btn">find</button>
+        </div>
+        <div id="res" class="box">
+            <div class="img-contain">
+                <div class="imgBox">
+                <img src="" alt="" id="img1">
+            </div>
+                <h1 id="name"></h1>
+                <hr>
+                <h2 id="prof"></h2>
+                <button id="add1">Add</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        let val = document.getElementById("val")
+        let btn = document.getElementById("btn")
+
+        let name = document.getElementById("name")
+        let prof = document.getElementById("prof")
+        let img1 = document.getElementById("img1")
+       let add1 = document.getElementById("add1")
+       let res = document.getElementById("res")
+        btn.addEventListener("click",()=>{
+            let find_friend = val.value.toLowerCase();
+           
+            switch(find_friend){
+                case "rohit":
+                    name.innerHTML = "Rohit"
+                    prof.innerHTML = "Front-End Developer"
+                    img1.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSD2jZZs6DHg68nYpdFOUCwwTs0GTSnTQz0LA&usqp=CAU"
+                    res.style.display ="block"
+                    break
+                    case "yogesh":
+                    name.innerHTML = "Yogesh"
+                    prof.innerHTML = "Back-End Developer"
+                    img1.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjHh1zR-23NmvitOchx0sLVAzp5RsIkAnJmOt8v8tv054Mj7BfzYH667NgiYD7Qcqzu4M&usqp=CAU";
+                    res.style.display ="block"
+
+                    break
+              default:
+                res.style.display = "none"
+                alert("this name is not available in my recorde.Please Enter valid data")
+            }
+        })
+
+        add1.addEventListener("click",()=>{
+            if(add1.innerText=="Add"){
+                add1.innerHTML = "Remove"
+            }
+            else if(add1.innerText=="Remove"){
+                add1.innerHTML = "Add"
+            }
+        })
+    </script>
+</body>
+
+</html>
