@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height:100vh;
+            background: #000;
+            background-image: url("https://i0.wp.com/picjumbo.com/wp-content/uploads/magical-spring-forest-scenery-during-morning-breeze-free-photo.jpg?w=600&quality=80");
+            background-repeat:no-repeat;
+            object-fit: cover;
+            background-position: center;
+            background-size: cover;
+        }
+        .heart{
+            font-size:3rem;
+            position: fixed;
+            top:-1vh;
+            transform: translateY(0);
+            animation:fall 3s linear forwards;
+        }
+        @keyframes fall{
+            to{
+                transform: translateY(105vh);
+            }
+        }
+    </style>
+</head>
+<body>
+         <script>
+            function creatHeart(){
+                const heart = document.createElement("div");
+                heart.classList.add("heart");
+               heart.className = "heart"
+                heart.innerHTML = "❤️"
+                
+                heart.style.left = Math.random()*100+"vw";
+                heart.style.animationDuration = Math.random()*2+3+"s";
+                document.body.appendChild(heart)
+
+                setTimeout(() => {
+                    heart.remove()
+                }, 3000);
+            }
+
+            setInterval(creatHeart, 200);
+         </script>
+</body>
+</html>
