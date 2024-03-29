@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        #root {
+            position: relative;
+            /* position: absolute; */
+            top: 20px;
+            /* width:200px; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .wrapper{
+            /* display: flex; */
+            align-items: center;
+            justify-content: center;
+            background: #000;
+            height:150px;
+            width:100%;
+        }
+
+        ul {
+            /* width: 100%; */
+            position: relative;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        ul li {
+            display: inline-block;
+            margin: 15px;
+            font-size: 2rem;
+            padding: 10px;
+        }
+
+        ul li a {
+            text-decoration: none;
+            text-transform: capitalize;
+        }
+
+        .img-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 60vh;
+        }
+        input{
+            padding: 10px;
+            width:250px;
+            font-size:20px;
+        }
+        #btn{
+            padding: 15px;
+            border: none;
+            text-transform: capitalize;
+            font-weight: bold;
+        }
+        @media (max-width:600px){
+            body{
+                background: #000;
+            }
+            input{
+                width:200px;
+            }
+            ul{
+               display: block;
+               /* width:330px; */
+            }
+            ul li{
+              border-bottom:1px solid white;     
+              box-shadow: 1px 2px 5px white;          
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div id="root">
+            <input type="text" id="val1">
+            <button id="btn">find Image</button>
+        </div>
+
+        <ul class="nav">
+            <li><a href="https://t4.ftcdn.net/jpg/04/15/79/09/360_F_415790935_7va5lMHOmyhvAcdskXbSx7lDJUp0cfja.jpg" target="_blank">animal</a></li>
+            <li><a href="https://media.istockphoto.com/id/1460109498/photo/lower-tahquamenon-falls-scenic-beauty-surrounding-river.jpg?b=1&s=612x612&w=0&k=20&c=dysAtHsMEGR2hHh3hdmzKUVnjbLEq9Rzs10t5iWQEXQ=" target="_blank">river</a></li>
+            <li><a href="https://media.istockphoto.com/id/1672317574/photo/ama-dablam-mountain-peak.webp?b=1&s=170667a&w=0&k=20&c=Ea8yDEHpUemrRuMZUKGPDBE11YTWVksIupMN8FkEBf8=" target="_blank">mountain</a></li>
+            <li><a href="https://st5.depositphotos.com/5490626/64889/i/450/depositphotos_648893272-stock-photo-hills-mountains-covered-young-green.jpg" target="_blank">hill</a></li>
+            <li><a href="https://static.vecteezy.com/system/resources/thumbnails/024/669/489/small_2x/mountain-countryside-landscape-at-sunset-dramatic-sky-over-a-distant-valley-green-fields-and-trees-on-hill-beautiful-natural-landscapes-of-the-carpathians-generative-ai-variation-5-photo.jpeg" target="_blank">nature</a></li>
+        </ul>
+    </div>
+    <div class="img-box">
+        <img src="" id="img1" alt="">
+    </div>
+    <script>
+        let val1 = document.getElementById("val1")
+        let btn = document.getElementById("btn")
+        let img1 = document.getElementById("img1")
+        btn.addEventListener("click", () => {
+            let choice = val1.value.toLowerCase();
+            switch (choice) {
+                case "animal":
+                    img1.src = "https://t4.ftcdn.net/jpg/04/15/79/09/360_F_415790935_7va5lMHOmyhvAcdskXbSx7lDJUp0cfja.jpg";
+                    break;
+                case "nature":
+                    img1.src = "https://static.vecteezy.com/system/resources/thumbnails/024/669/489/small_2x/mountain-countryside-landscape-at-sunset-dramatic-sky-over-a-distant-valley-green-fields-and-trees-on-hill-beautiful-natural-landscapes-of-the-carpathians-generative-ai-variation-5-photo.jpeg";
+                    break;
+
+                case "hill":
+                    img1.src = "https://st5.depositphotos.com/5490626/64889/i/450/depositphotos_648893272-stock-photo-hills-mountains-covered-young-green.jpg";
+                    break;
+
+                case "mountain":
+                    img1.src = "https://media.istockphoto.com/id/1672317574/photo/ama-dablam-mountain-peak.webp?b=1&s=170667a&w=0&k=20&c=Ea8yDEHpUemrRuMZUKGPDBE11YTWVksIupMN8FkEBf8=";
+                    break;
+
+                case "river":
+                    img1.src = "https://media.istockphoto.com/id/1460109498/photo/lower-tahquamenon-falls-scenic-beauty-surrounding-river.jpg?b=1&s=612x612&w=0&k=20&c=dysAtHsMEGR2hHh3hdmzKUVnjbLEq9Rzs10t5iWQEXQ=";
+                    break;
+                default:
+                    alert("Please enter valid data")
+            }
+            console.log(choice);
+        })
+    </script>
+</body>
+
+</html>
