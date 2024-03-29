@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height:100vh;
+            background: #000;
+        }
+        .wrapper{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+        .profileBox{
+            margin:15px;
+            width:400px;
+            display: flex;
+            /* align-items: center; */
+            justify-content: center;
+            box-shadow: 1px 5px 10px 5px brown;
+            color: wheat;
+            border-radius: 20px;
+        }
+        .imgContain{
+            width:300px;
+            text-align: center;
+        }
+        img{
+            width:100%;
+            border-radius: 100%;
+            margin-top:10px;
+        }
+        h1,h2,#btn{
+            margin: 15px;
+        }
+        #btn{
+            padding: 10px;
+            font-size:18px;
+            background: #000;
+            border: 1px solid white;
+            color: white;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+
+        <div class="profileBox">
+            <div class="imgContain">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf2j71u2ipMbi4uUIcRaomOvJOSPkvvUPWFA&usqp=CAU" alt="" id="img1">
+                <h1 id="name">Jack</h1>
+                <hr>
+                <h2 id="title1">Front-end Developer</h2>
+                <button id="btn"> More Profile</button>
+            </div>
+        </div>
+
+       
+    </div>
+    <script>
+        let data = [
+            {name:"joye",prof:"back-end Developer",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl--v7gBSROaF2uGu6uzG6sm_rWh6_6e3tqM4yKutiqS6Svo-Z7PKhqOb4BOqjq5Lvy5c&usqp=CAU"},
+
+            {name:"Rocky",prof:"IT manager Developer",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQYX7hZLSVUKuhKignY929CcxQw_P85E_vCdj5FM6-lQetwZg1Nguy1z9pQUjjzndjOwI&usqp=CAU"},
+
+            {name:"Roye",prof:"full-stack Developer",img:"https://cdn-icons-png.freepik.com/512/5556/5556468.png"},
+        ]
+        let name = document.getElementById("name")
+        let title1 = document.getElementById("title1")
+        let btn = document.getElementById("btn")
+        let  img = document.getElementById("img1")
+        let random;
+        btn.addEventListener("click",()=>{
+            random = data[Math.floor(Math.random()*data.length)]
+            name.innerHTML = random.name
+            title1.innerHTML = random.prof
+            img.src = random.img
+        })
+    </script>
+</body>
+</html>
