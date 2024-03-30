@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height:100vh;
+        }
+        #root{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            width:400px
+        }
+        .item,#btn,#btn1{
+            width:50px;
+            height:50px;
+            margin: 5px;
+            border: 1px solid black;
+            background: #000;
+            color: white;
+            font-size:3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+        }
+        #btn,#btn1{
+            width:150px;
+            height:70px;
+            background: orange;
+        }
+        #val{
+            border: 2px solid black;
+            width:400px;
+            height:40px;
+            font-size:25px;
+            font-weight:bold;
+        }
+
+    </style>
+</head>
+<body>
+        <input type="text" id="val" disabled>
+        <div id="root">
+            <div class="item">+</div>
+            <div class="item">-</div>
+            <div class="item">*</div>
+            <div class="item">/</div>
+            <button id="btn1">=</button>
+       </div>
+       <button id="btn">clear</button>
+       <script>
+        let root = document.getElementById("root")
+        let val = document.getElementById("val")
+        let btn = document.getElementById("btn")
+        let btn1 = document.getElementById("btn1")
+        for(let i=0;i<10;i++){
+            let div = document.createElement("div")
+            div.className = "item"
+            div.innerHTML = `${i}`
+            root.appendChild(div)
+        }
+        let item = document.querySelectorAll(".item")
+        item.forEach((item)=>{
+            item.addEventListener("click",()=>{
+                console.log(item.innerText);
+                alert(`you click on number ${item.innerText}`)
+                val.value +=item.innerText
+
+            })
+        })
+        btn.addEventListener("click",()=>{
+            val.value=""
+        })
+        btn1.addEventListener("click",()=>{
+            val.value = eval(val.value)
+        })
+        
+       </script>
+</body>
+</html>
