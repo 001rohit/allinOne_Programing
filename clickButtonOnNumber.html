@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #root{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+        .item{
+            width:200px;
+            height:200px;
+            margin: 5px;
+            border: 1px solid black;
+            background: #000;
+            color: white;
+            font-size:3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+       <div id="root"></div>
+       <script>
+        let root = document.getElementById("root")
+        for(let i=1;i<=10;i++){
+            let div = document.createElement("div")
+            div.className = "item"
+            div.innerHTML = `${i}`
+            root.appendChild(div)
+        }
+        let item = document.querySelectorAll(".item")
+        item.forEach((item)=>{
+            item.addEventListener("click",()=>{
+                console.log(item.innerText);
+                alert(`you click on number ${item.innerText}`)
+            })
+        })
+       </script>
+</body>
+</html>
