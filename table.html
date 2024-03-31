@@ -5,51 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        *{
-            text-align: center;
-            /* border: 1px solid black; */
-            /* background: #000; */
-        }
-        h1{
-            background: white;
-        }
-        #demo{
-            /* border: 1px solid black; */
-            /* display: flex; */
-            text-transform: uppercase;
-            flex-direction: column;
-            justify-content: center;
+        body{
+            display: flex;
             align-items: center;
-            flex-wrap: wrap;
-            background: red;
+            justify-content: center;
+            height:80vh;
         }
-        .num{
+        .item1{
+            border:1px solid black;
+        }
+        table{
+            border-collapse: collapse;
+        }
+        tr,th,td{
+            text-align: center;
+            width:150px;
             border: 1px solid black;
-            background: white;
-            padding: 5px;
-            margin:5px;
-            font-size:25px;
+            font-size:20px;
+            text-transform: capitalize;
         }
     </style>
 </head>
 <body>
-    <h1>Table 1 to 10</h1>
-    <div id="demo"></div>
+    <table id="root"  >
+        <tr>
+            <th>S.no</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Salary</th>
+        </tr>
+        <!-- <tr>
+            <td>1</td>
+            <td>Rohit</td>
+            <td>Bhopal</td>
+            <td>25000</td>
+        </tr> -->
+    </table>
     <script>
-        const num =[]
-        let demo = document.getElementById("demo")
+        let root = document.getElementById("root")
+        let data = [
+            {id:1,name:"Rohit",city:"Bhopal",salary:"25000/-"},
+            {id:2,name:"Yogesh",city:"jabalpu",salary:"35000/-"},
+            {id:3,name:"Mukul",city:"Bhopal",salary:"45000/-"}
+        ]
+        data.forEach((item)=>{
+            let tr = document.createElement("tr")
+
+            tr.innerHTML = `<tr>
+          <td>${item.id}.</td>
+          <td>${item.name}</td>
+          <td>${item.city}</td>
+          <td>${item.salary}</td>
+            </tr>`
+            root.appendChild(tr)
+        })
         
-        for(let i=1;i<=10;i++){
-            var tableNum = document.createElement("h1")
-            tableNum.innerHTML = `table ${i}`
-            demo.appendChild(tableNum)
-            for(let j=1;j<=10;j++){
-                var div = document.createElement("div")
-                div.className = 'num'
-                div.innerHTML = `${i} * ${j} =  ${i*j}</br>`
-                demo.appendChild(div)
-            }
-        }
     </script>
 </body>
 </html>
