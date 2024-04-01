@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <style>
+    body{
+        display: flex;
+        justify-content: center;
+        height:100vh;
+        align-items: center;
+        background: #000;
+    }
+    #root{
+        width:300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    img{
+        width:100%
+    }
+  </style>
+</head>
+<body>
+      <div id="root">
+        <img src="https://media.istockphoto.com/id/1397636949/vector/cute-little-bear-cartoon-sitting.jpg?s=612x612&w=0&k=20&c=Rf43BNroi0-GPfC3TM2kE7K4ul5QUaSW1qbk4NC-q_c=" alt="" id="img1">
+      </div>
+      <script>
+        let img1 = document.getElementById("img1")
+        let img  = [
+            {img1:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3VBjNanlHDPtPN9M4PGVA8Zb7C6pPEILTd9o_rBNZ3AOXRz-L9722s0Pr6wP8qVnAX6A&usqp=CAU"},
+            {img1:"https://i.pinimg.com/474x/e3/a9/3c/e3a93ce3c30a6812b6792f5bf17f4869.jpg"},
+            {img1:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlqdpRfWVn7infQjHjNzfBgrNxnoLc8MiZ5iu5dgqifQr6ozKnM560G93qFa4BPcTC16s&usqp=CAU"},
+        ]
+        let randImg;
+        function randomImg(){
+       randImg = img[Math.floor(Math.random()*img.length)]
+       img1.src = `${randImg.img1}`
+     
+        }
+        setInterval(randomImg, 1000);
+      </script>
+</body>
+</html>
