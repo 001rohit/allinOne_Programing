@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height:100vh
+        }
+        .top-containBox{
+            border: 1px solid black;
+            width:440px;
+            padding: 10px;
+            text-align: center;
+            background: rgb(30, 170, 30);
+            color: white;
+            border-radius:10px;
+           text-transform: capitalize;
+
+        }
+        .income-detail{
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .box{
+            background: #000;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width:180px;
+            border: 1px solid white;
+            padding-bottom:10px;
+           color: rgb(191, 191, 230);
+           border-radius: 25px;
+        }
+        .box h1,.contain2 h1{
+            margin: 10px;
+        }
+         .income{
+            color: lime;
+         }
+         .expense{
+            color: red;
+         }
+         .history,.add-transaction{
+            padding-left: 10px;
+            text-align: left;
+            margin-top: 25px;
+        }
+        .history h2,.add-transaction h2{
+            margin-bottom:5px;
+         }
+       .desc{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+       }
+       .box-status{
+        width:200px;
+        margin: 15px;
+
+       }
+       .box-status p{
+        margin: 5px;
+        font-size:25px;
+       }
+       .desc-box input{
+        padding: 10px;
+        font-size: 15px;
+        text-transform: uppercase;
+       }
+       .btn #btn{
+        padding: 10px;
+        font-size: 18px;
+        border-radius: 10px;
+        border: none;
+        background: #000;
+        color: white;
+        cursor: pointer;
+        transition: all 0.2s;
+       }
+       .btn #btn:active{
+        transform: scale(0.85);
+        background: gray;
+       }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="top-containBox">
+            <h2 class="contain1">Expense Tracker</h2>
+            <div class="contain2">
+                <h1 class="balance-contain">Your Balance</h1>
+                <h1 class="balance" id="balance">$0.00</h1>
+            </div>
+            <div class="income-detail">
+                <div class="box">
+                    <h1 class="income1-text">Income</h1>
+                    <h1 class="income" id="income">$0.00</h1>
+                </div>
+                <div class="box">
+                    <h1 class="income1-text">Expense</h1>
+                    <h1 class="expense" id="expense">$0.00</h1>
+                </div>
+            </div>
+              
+            <div class="history" id="root1">
+                <h2 class="history1">History</h2>
+            </div>
+            <hr>
+
+            <div class="add-transaction">
+                <h2 class="transaction1">Add new transaction</h2>
+            </div>
+            <hr>
+
+            <div class="desc">
+
+                <div class="box-status">
+                    <p class="desc1">Description</p>
+                    <div class="desc-box">
+                        <input type="text" id="desc" placeholder="Enter description" >
+                    </div>
+                </div>
+
+                <div class="box-status">
+                    <p class="desc1">Amount</p>
+                    <div class="desc-box">
+                        <input type="number" id="amount" placeholder="Enter Amount">
+                    </div>
+                </div>
+            </div>
+
+              <div class="btn">
+                <button id="btn">Add Transaction</button>
+            </div>
+            <p class="desc1">(expense = -100 , income=100)</p>
+        </div>
+    </div>
+    <script>
+        let income = document.getElementById("income")
+        let balance = document.getElementById("balance")
+        let expense = document.getElementById("expense")
+        let btn = document.getElementById("btn")
+
+        let desc = document.getElementById("desc")
+        let amount = document.getElementById("amount")
+        let root = document.getElementById("root1")
+       
+        btn.addEventListener("click",()=>{
+            for(let i=1;i<=1;i++){
+                let div = document.createElement("div")
+                if(amount.value>0){
+                    div.innerHTML = `<li>${desc.value} :income ${amount.value}$</li>`
+                }
+                else{
+                    div.innerHTML = ` <li>${desc.value} : expenses ${amount.value}$</li>`
+                }
+                 root.appendChild(div)
+            }
+            let a=0;
+            let b=0;
+           if(amount.value>0){
+              a+=amount.value
+              balance.innerHTML  =`$${amount.value}` 
+              income.innerHTML = `$${amount.value}` 
+            }
+            else{
+                b -= amount.value
+                expense.innerHTML = `$${amount.value}`   
+                balance.innerHTML = a-b
+            }
+            a = Number(a)
+            b = Number(b)
+            console.log(typeof a,a);
+            console.log(a-b);
+        })
+    </script>
+</body>
+</html>
