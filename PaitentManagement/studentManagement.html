@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .wrapper{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height:100vh;
+            text-align: center;
+        }
+        .student-box{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .box1{
+            width:280px;
+            height:250px;
+            /* border: 1px solid black; */
+            margin: 5px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            margin-top:30px
+        }
+        .box1:nth-child(1){
+            background: #e6e206;
+        }
+        .box1:nth-child(2){
+            background: #062be6;
+        }
+        .box1:nth-child(3){
+            background: #06e6e6;
+        }
+        p{
+            font-size:3.4rem;
+            margin-top: 30px;
+        }
+        button{
+            padding: 10px;
+            margin-bottom:10px;
+            font-weight: bold;
+            font-size: 15px;
+            text-transform: uppercase;
+            margin-top:20px;
+            background: #000;
+            color: white;
+            border-radius: 10px;
+            height:55px
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="box">
+            <h1 id="title1">paitent management system Dashboard</h1>
+
+            <div class="student-box">
+
+                <div class="box1">
+                    <h2 id="student-data">Total No. paitent is admited at present </h2>
+                    <p id="total-student">0</p>
+                </div>
+
+                <div class="box1">
+                    <h2 id="student">total number of case to handle </h2>
+                    <p id="Add">0</p>
+                    <button id="add">Add Paitent</button>
+                </div>
+
+                <div class="box1">
+                    <h2 id="student">Total No. Paitent Discharge</h2>
+                    <p id="Remove">0</p>
+                    <button id="dis">discharge Paitent</button>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    <script>
+        let add1 = document.getElementById("add")
+        let show_add = document.getElementById("Add")
+        let show_remove = document.getElementById("Remove")
+        let dis1 = document.getElementById("dis")
+        let final = document.getElementById("total-student")
+        let total_add=0;
+        let total_dis=0;
+        let sum=0
+        let a ;
+        let b;
+        
+        add1.addEventListener("click",()=>{
+            a = prompt("Enter the number  of  paitent to add: ")
+            a= Number(a)
+            console.log(typeof a);
+            total_add +=a
+            show_add.innerHTML = total_add
+            showData()
+        })
+        dis1.addEventListener("click",()=>{
+            b=prompt("Enter the number  of  paitent to discharge: ")
+            b = Number(b)
+            total_dis+=b
+            console.log(typeof  b);
+            show_remove.innerHTML = total_dis
+            showData()
+        })
+        function showData(){
+            let final_number = total_add-total_dis
+            final.innerHTML = final_number
+        }
+    </script>
+</body>
+
+</html>
