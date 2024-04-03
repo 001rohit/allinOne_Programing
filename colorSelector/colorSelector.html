@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height:100vh;
+        }
+        .wrapper{
+            /* width:350px; */
+            text-align: center;
+            height:330px;
+            border: 1px solid black;
+            display: flex;
+        }
+        .box{
+            overflow-y: scroll;
+            flex-wrap: wrap;
+            padding: 10px;
+            margin: 10px;
+
+        }
+        button{
+            margin:5px;
+            padding:10px;
+        }
+        .btn{
+            display: flex;
+            flex-direction: column;
+        }
+        input{
+            width:200px;
+            height:90px;
+        }
+        #root{
+            line-height: 1;
+            font-size:25px;
+            /* display: flex; */
+            align-items: center;
+            justify-content: center;
+            /* flex-direction: column; */
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box">
+            <input type="color" id="val">
+            <div id="root">
+            </div>
+        </div>
+        <hr>
+        <div class="btn">
+            <button id="btn1">stage one</button>
+            <button id="btn2">stage two</button>
+            <button id="btn3">stage three</button>
+            <button id="btn4">stage four</button>
+            <button id="btn5">stage five</button>
+            <button id="btn6">stage six</button>
+        </div>
+        
+    </div>
+        <script>
+            let root =document.getElementById("root")
+            let add1 = document.getElementById("btn")
+            let val = document.getElementById("val")
+
+            let btn1 = document.getElementById("btn1")
+            let btn2 = document.getElementById("btn2")
+            let btn3 = document.getElementById("btn3")
+            let btn4 = document.getElementById("btn4")
+            let btn5 = document.getElementById("btn5")
+            let btn6 = document.getElementById("btn6")
+ 
+            let a="";
+            let b="";
+            let c="";
+            btn1.addEventListener("click",()=>{
+                alert("click1")
+                let div = document.createElement("div")
+                a=val.value
+                div.innerHTML = `color code: ${a} </br>`
+                root.appendChild(div)
+            })
+            btn2.addEventListener("click",()=>{
+                alert("click2")
+
+                let div = document.createElement("div")
+                b=val.value
+                div.innerHTML = `color code: ${b} </br>`
+                root.appendChild(div)
+
+            })
+         
+        </script>
+</body>
+</html>
