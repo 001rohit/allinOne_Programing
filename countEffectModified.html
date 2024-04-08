@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: #000;
+        }
+        .wrapper{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height:100vh;
+            flex-direction: column;
+        }
+        #root{
+            float: right;
+            position: fixed;;
+            font-size: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: red;
+            width:100px;
+            height:100px;
+            border-radius: 50px;
+            background: white;
+            overflow: hidden;
+            border: 5px double green;
+        }
+        #btn,.item{
+            padding: 25px;
+            font-size:25px;
+            font-weight: bold;
+            background: white;
+            color: black;
+            border-radius: 10px;
+            cursor: pointer;
+            /* margin:5px; */
+        }
+    </style>
+</head>
+<body>
+    <div id="root">0</div>
+    <div class="wrapper">
+            <div id="root1"></div>
+            <button id="btn">Please Click Me!</button>
+        </div>
+        <script>
+            let root = document.getElementById("root")
+            let root1 = document.getElementById("root1")
+            let btn = document.getElementById("btn")
+            let count = 0;
+            let stop;
+            let mess="";
+            btn.addEventListener("click",()=>{
+                stop =   setInterval(() => {
+                    count--
+                    if( count<1 ){
+                        count=10;
+                        root.innerHTML = count
+                    }
+                    else{
+                        root.innerHTML = count
+                        let btn1 = document.createElement("button")
+                        // if(count==2){
+                        // }
+                        mess=" I miss my expensive time "
+                            btn1.className = "item"
+                            btn1.style.margin = "10px"
+                            btn1.innerHTML = mess 
+                            root1.appendChild(btn1)
+                            console.log(i);
+                    }
+            }, 500);
+            btn.remove()
+            })
+           
+        </script>
+</body>
+</html>
