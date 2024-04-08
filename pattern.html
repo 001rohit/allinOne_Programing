@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            height:100vh;
+            align-items: center;
+            background: #000;
+        }
+        #root{
+            font-size:3rem;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script>
+    //     let val = prompt("Please Enter any number: ")
+    //     val = Number(val)
+    //     let count=0;
+    //     for(let i=1;i<=val;i++){
+    //             if(val%i==0){
+    //                 count+=1
+    //                 break
+    //             }
+    //         }
+    //    if(val<=1){
+    //     console.log("This number is not prime");
+    //    }       
+    //    if(count==1){
+    //     console.log("this number is not prime number");    
+    //    }
+    //    else{
+    //     console.log("this number is prime number");
+    //    }
+      
+    // let a =1;
+    // let b=0;
+    // let c="";
+    // for(let i=0;i<5;i++){
+    //     c += a+b
+    // }
+    // console.log(c)
+
+    let a =1;
+    let b=0;
+    let root = document.getElementById("root")
+    let e=""
+    for(let i=1;i<=5;i++){
+        let div = document.createElement("div")
+        let c="";
+        for(let j=0;j<10;j++){
+            c += a+b
+        }
+        // console.log(c)
+        div.innerHTML = c
+        root.appendChild(div)
+    }
+
+    // let a=2;
+    // for(let i=1;i<=2;i++){
+    //     for(let j=1;j<=10;j++){
+    //         console.log(i*j);
+    //     }
+    // }
+    </script>
+</body>
+</html>
