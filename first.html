@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height:100vh;
+            flex-direction: column;
+            text-align: center;
+        }
+        #root{
+            font-size: 3rem;
+            transition:all 0.8s;
+            width:200px;
+            padding: 10px;
+            margin:5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="root"></div>
+        <!-- <button class="btn">one</button> -->
+        <!-- <button class="btn">two</button> -->
+        <!-- <button class="btn">three</button> -->
+    </div>
+    <script>
+        let btn = document.querySelectorAll(".btn")
+        let root = document.getElementById("root")
+
+        // btn[0].addEventListener("click",()=>{
+        //     if(btn[0].innerText=="one"){
+        //         btn[0].innerHTML ="hellow"
+        //         document.body.style.background ="lime"
+        //         root.innerHTML = "hellow"
+        //     }
+        //     else if(btn[0].innerText=="hellow"){
+        //         btn[0].innerHTML="one"
+        //         document.body.style.background ="cyan"
+        //         root.innerHTML = "welcome"
+
+        //     }
+        // })
+
+        // btn[1].addEventListener("click",()=>{
+        //     if(btn[1].innerText=="two"){
+        //         btn[1].innerHTML ="hellow"
+        //         document.body.style.background ="red"
+        //         root.innerHTML = "hellow"
+
+        //     }
+        //     else if(btn[1].innerText=="hellow"){
+        //         btn[1].innerHTML="two"
+        //         document.body.style.background ="brown"
+        //         root.innerHTML = "welcome"
+
+        //     }
+        // })
+
+        // btn[2].addEventListener("click",()=>{
+        //     if(btn[2].innerText=="three"){
+        //         btn[2].innerHTML ="hellow"
+        //         document.body.style.background ="yellow"
+        //         root.innerHTML = "hellow"
+
+        //     }
+        //     else if(btn[2].innerText=="hellow"){
+        //         btn[2].innerHTML="three"
+        //         document.body.style.background ="blue"
+        //         root.innerHTML = "welcome"
+
+        //     }
+        // })
+     let count=0;
+        setInterval(() => {
+            count++;
+            if(count%2==0){
+                root.innerHTML = "hellow"
+                root.style.color ="red"
+                root.style.background="orange"
+            }
+            else{
+                root.innerHTML ="welcome"
+                root.style.color ="lime"
+                root.style.background="brown"
+            }
+        }, 1000);
+
+    </script>
+</body>
+</html>
