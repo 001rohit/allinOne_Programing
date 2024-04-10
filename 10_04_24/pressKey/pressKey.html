@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height:100vh;
+            flex-direction: column;
+            background: #000;
+        }
+        #root{
+            font-size:9rem;
+            transition: all 0.5s;
+            border: 1px solid black;
+            margin-bottom:10px;
+            border-radius: 100px;
+            background: white;
+        }
+        #btn{
+            transition: all 0.5s;
+            padding: 10px;
+            font-size:20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+       <div id="root">🫡</div>
+       <button id="btn">click me!</button>
+       <script>
+        let btn = document.getElementById("btn")
+        let root = document.getElementById("root")
+
+        btn.addEventListener("click",()=>{
+            if(btn.innerText=="click me!"){
+                btn.innerText = "click me again"
+                root.innerHTML="😫"
+                root.style.background="red"
+            }
+            else if(btn.innerText=="click me again"){
+                btn.innerText = "click me!"
+                root.innerHTML="🫡"
+                root.style.background="white"
+            }
+        })
+
+       document.body.addEventListener("keyup",()=>{
+           root.innerHTML="🫡"
+           root.style.background="white"
+           btn.innerHTML = "click me!"
+
+        })
+        document.body.addEventListener("keypress",()=>{
+            root.innerHTML="😫"
+            root.style.background="red"
+            btn.innerHTML = "oops!"
+       })
+       </script>
+</body>
+</html>
