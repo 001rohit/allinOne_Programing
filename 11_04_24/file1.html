@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height:30vh;
+        }
+        table{
+            border-collapse: collapse;
+            width:500px;
+        }
+        table ,td,th{
+            border:1px solid black;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <table id="root">
+        <tr>
+            <th>S.no</th>
+            <th>name</th>
+            <th>email</th>
+            <th>address</th>
+        </tr>
+    </table>
+    <script>
+        let root = document.getElementById("root")
+        let data = [
+            {id:1,name:"rohit",add:"bhopal",email:"kumrerohit7@gmail.com"},
+            {id:2,name:"yogesh",add:"vidisha",email:"kumaryogesh7@gmail.com"},
+            {id:3,name:"mohit",add:"raisen",email:"kumaremohit7@gmail.com"},
+        ]
+        let count;
+        let name;
+        let add;
+        let email;
+        console.log(data);
+        data.forEach((item)=>{
+            let div = document.createElement("tr")
+             name = item.name
+             add = item.add
+             email = item.email
+             count = item.id;
+             console.log(name,add,email);
+            //  console.log(add);
+            div.innerHTML = `<td>${count}</td>
+                 <td>${name}</td>
+                <td>${email}</td>
+                <td>${add}</td>`
+                    root.appendChild(div)
+                })
+    </script>
+</body>
+</html>

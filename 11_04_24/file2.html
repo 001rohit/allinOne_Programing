@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #000;
+        }
+        #root{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .box{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* height:400px; */
+            flex-wrap: wrap;
+            border: 1px solid black;
+            margin: 15px ;
+            padding: 15px;
+            flex-direction: column;
+            border-radius: 30px;
+            /* width:390px; */
+        }
+        h1,h2{
+            margin: 10px 0;
+        }
+        img{
+            width:150px;
+            height:150px;
+            object-fit: cover;
+            /* border-radius:100px; */
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+    </div>
+    <script>
+        let root = document.getElementById("root")
+        let data = [
+            {id:1,name:"rohit",add:"bhopal",email:"kumrerohit7@gmail.com",img:"1.jpg"},
+            {id:2,name:"yogesh",add:"vidisha",email:"kumaryogesh7@gmail.com",img:"2.jpg"},
+            {id:3,name:"mohit",add:"raisen",email:"kumaremohit7@gmail.com"},
+        ]
+        let count;
+        let name;
+        let add;
+        let email;
+        let img1;
+        data.forEach((item)=>{
+            let div = document.createElement("div")
+          count = item.id;
+          name = item.name;
+          add = item.add;
+          email = item.email;
+          img1 = item.img;
+          console.log(img1);
+          div.innerHTML = `
+             <img src=${img1} alt="image-not-found"/>
+          <h1>(${count}) Name : ${name}</h1>
+          <h2>Email : ${email}</h2>
+          <h2>address: ${add}</h2>
+          `
+          div.className = "box"
+          div.style.background = "brown"
+          div.style.color = "white"
+          root.appendChild(div)
+        })
+    </script>
+</body>
+</html>
