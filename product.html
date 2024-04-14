@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: #000;
+        }
+        #root{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            /* color: white; */
+        }
+        .pro{
+            background: white;
+            width:350px;
+            height:420px;
+            margin: 5px;
+            border: 1px solid black;
+            text-align: center;
+            padding: 10px;
+            transition: all 0.5s;
+            cursor: pointer;
+            position: relative;
+            z-index: 0;
+        }
+        .pro:hover{
+            box-shadow: 2px 2px 10px white;
+            transform: scale(1.1);
+            z-index: 1;
+        }
+        img{
+            width:100%;
+            height:250px;
+            object-fit: cover;
+        }
+        h2,p{
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script>
+        let root = document.getElementById("root")
+        let id1;
+        let catorgery1;
+        let image1;
+        let desc1;
+        let price1;
+
+        fetch("https://fakestoreapi.com/products").then((item)=>item.json()).then(data=>{
+           console.log(data);
+           data.forEach(element => {
+                let div = document.createElement("div")
+                id1 = element.id
+           image1 = element.image;
+           desc1 = element.description;
+           price1 = element.price;
+           catorgery1 = element.category;
+           div.innerHTML=`
+           <img src=${image1} alt="image"/>
+           <h2>${id1} : ${catorgery1}</h2>
+           <p>${desc1.slice(0,220)}</p>
+           <p>price:${price1}</p>
+           `
+           div.className = "pro"
+           root.appendChild(div)
+            
+           });
+        }).catch((error)=>console.log("some technical issue"))
+    </script>
+</body>
+</html>
