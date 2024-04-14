@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: #000;
+            color:white;
+        }
+        #root{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* height: 50vh; */
+            flex-wrap: wrap;
+        }
+        .userBox{
+           width:300px;
+           padding: 10px;
+           text-align: center;
+           border: 1px solid white;
+           margin:5px;
+           background: white;
+           color: black;
+        }
+        h1,h3{
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+     <div id="root">
+
+     </div>
+
+     <script>
+        let data = [
+            {id:1,name:"rohit",city:"bhopal"},
+            {id:2,name:"yogesh",city:"vidisha"},
+            {id:3,name:"lokesh",city:"dewash"}
+        ]
+        let root = document.getElementById("root");
+        let id1;
+        let name1;
+        let city1;
+
+        myfunction()
+        function myfunction(){
+            data.forEach((item)=>{
+                let div = document.createElement("div")
+                id1 = item.id;
+                name1 = item.name;
+                city1 = item.city;
+                div.innerHTML = `
+                 <h1>id)${id1}: ${name1}</h1>
+                 <h3>city: ${city1}</h3>
+                `;
+                div.className = "userBox"
+                root.appendChild(div)
+            })
+        }
+     </script>
+</body>
+</html>

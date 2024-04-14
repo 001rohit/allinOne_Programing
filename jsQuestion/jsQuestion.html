@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String js</title>
+</head>
+<body>
+    <h1>String methods</h1>
+    <script>
+        let str = "hellow world world world"
+        console.log(str);
+
+        // length of string
+
+        console.log(str.length);
+          
+        for(let i=0;i<str.length;i++){
+            console.log(str[i]);
+        }
+
+        // string methods
+
+        // 1 toUpperCase 
+        console.log(str.toUpperCase());
+        // 2 toLowerCase 
+        console.log(str.toLowerCase());
+
+        // 3. Trim method
+
+        console.log(str.trimStart());
+        console.log(str.trim());
+        console.log(str);
+
+        // 4. charAt method
+        console.log(str.charAt(4).toUpperCase());
+
+        // 5. indexOf Method
+
+        console.log(str.indexOf("world"));
+
+        // 6. last indexOf method
+        console.log(str.lastIndexOf("world"));
+
+        // 7. slice method
+        console.log(str.slice(0,5));
+
+        // 8. substring method
+
+        let slice1 = str.slice(0,5);
+        console.log(slice1);
+
+        let substring1 = str.substring(0,5)
+        console.log(substring1);
+
+        // 9. splite method
+
+        let split1 = str.split(" ");
+        console.log(split1);
+
+        let str1 = "hellow"
+        let val  = str1.split(" ")
+        console.log(val);
+
+        // let concat method
+
+        let new_str = " check it out!"
+
+        let store2 = str.concat(new_str)
+        console.log(store2);
+ 
+        // let repeate method
+
+        let store3 = str.repeat(3)
+        console.log(store3);
+
+        let string2 = " hellow welcome "
+        let store4 = string2.repeat(3)
+        console.log(store4);
+    </script>
+</body>
+</html>
