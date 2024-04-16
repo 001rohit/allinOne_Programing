@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height:100vh;
+            flex-direction: column;
+        }
+        .box-size{
+            display: flex;
+           max-width:350px;
+            background: #000;
+            overflow: hidden;
+        }
+        #container{
+            transition: all 0.5s;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            max-width:350px;
+            height:150px;
+            margin:10px 0;
+        }
+        .box{
+            min-width: 160px;
+            text-align: center;
+            border: 1px solid black;
+            margin:7px;
+            background: white;
+        }
+        button{
+            padding: 10px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box-size">
+        <div class="wrapper" id="container">
+            <div class="box">
+                <h2>hellow</h2>
+            </div>
+            <div class="box">
+                <h2>hellow</h2>
+            </div>
+            <div class="box">
+                <h2>hellow</h2>
+            </div>
+            <div class="box">
+                <h2>hellow</h2>
+            </div>
+            <div class="box">
+                <h2>hellow</h2>
+            </div>
+            <div class="box">
+                <h2>hellow</h2>
+            </div>
+        </div>
+    </div>
+    
+    <div class="btn">
+        <button id="btn1">pre</button>
+        <button id="btn2">next</button>
+    </div>
+    <script>
+        let box = document.querySelectorAll(".box")
+        console.log(box.length);
+        let container = document.getElementById("container");
+        let btn1 = document.getElementById("btn1");
+        let btn2 = document.getElementById("btn2");
+        let slide=1;
+        btn1.addEventListener("click",()=>{
+            container.style.transform = `translateX(-${(slide-1)*165}px)`
+            slide--;
+        })
+        btn2.addEventListener("click",()=>{
+          if(slide<box.length){
+             container.style.transform = `translateX(-${slide*165}px)` 
+             slide++;
+          }
+          else{
+            container.style.transform = `translateX(0px)`;
+            slider=1;
+          }
+        })
+
+    </script>
+</body>
+</html>
