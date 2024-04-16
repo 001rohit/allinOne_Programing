@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+    
+        .box-size{
+            max-width:650px;
+            display: flex;
+            overflow: hidden;
+          background: #000;
+          /* margin-bottom:10px; */
+        }
+        #container{ 
+            transition:all 0.5s;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            /* padding: 20px; */
+            max-width:650px;
+        }
+
+        .box{
+            min-width: 300px;
+            margin: 10px;
+            border: 1px solid black;
+            /* padding: 10px; */
+            margin: 10px;
+            text-align: center;
+            background: white;
+        }
+        .imgBox{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+       img{
+        /* width:100%; */
+        height:200px;
+        object-fit: cover;
+       }
+       button{
+        padding: 10px;
+        font: 18px;
+        width:110px;
+        font-weight: bold;
+        margin:5px 0;
+        cursor: pointer;
+       }
+       h2,h2{
+        margin: 5px;
+       }
+</style>
+</head>
+
+<body>
+    <div class="box-size">
+        <div class="wrapper" id="container">
+           
+            <div class="box">
+                <div class="imgBox">
+                    <img src="https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg"
+                        alt="">
+                    <h1 class="name">Jack</h1>
+                </div>
+                <div class="contain">
+                    <h2 class="status fri" >Friend</h2>
+                </div>
+                <div class="btn">
+                    <button class="btn1">add</button>
+                    <button id="btn2">show</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="imgBox">
+                    <img src="https://media.istockphoto.com/id/940475680/photo/close-up-portrait-of-cheerful-brunet-young-man-in-jeans-shirt-crossing-hands-and-look-at.jpg?s=612x612&w=0&k=20&c=FFduZf0U7qxwIfkrzAPHXgxK2LoZf86i74rFtex6cLw="
+                        alt="">
+                    <h1 class="name">Jack</h1>
+                </div>
+                <div class="contain">
+                    <h2 class="status fri" >Friend</h2>
+                </div>
+                <div class="btn">
+                    <button class="btn1">add</button>
+                    <button id="btn2">show</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="imgBox">
+                    <img src="https://media.istockphoto.com/id/474460755/photo/handsome-young-man-smiling-with-hand-in-hair.jpg?s=612x612&w=0&k=20&c=4rPwlhXBAp3YTc_rhHLLZHzkWcqKNhYkGujOzYd9lWY="
+                        alt="">
+                    <h1 class="name">Jack</h1>
+                </div>
+                <div class="contain">
+                    <h2 class="status fri" >Friend</h2>
+                </div>
+                <div class="btn">
+                    <button class="btn1">add</button>
+                    <button id="btn2">show</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="imgBox">
+                    <img src="https://media.istockphoto.com/id/1368729430/photo/serious-man-pointing-forward-while-standing.jpg?s=612x612&w=0&k=20&c=-bAvJDYsSimrU4-laHK0ePjWwgqSUyn8a3GeI7XcZNk="
+                        alt="">
+                    <h1 class="name">Jack</h1>
+                </div>
+                <div class="contain">
+                    <h2 class="status fri" >Friend</h2>
+                </div>
+                <div class="btn">
+                    <button class="btn1">add</button>
+                    <button id="btn2">show</button>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="slider-btn">
+            <button id="Btn1">prev</button>
+            <button id="Btn2">next</button>
+        </div>
+    <script>
+        let btn1 = document.querySelectorAll(".btn1")
+        let fri = document.querySelectorAll(".fri")
+        let Btn1 = document.getElementById("Btn1")
+        let Btn2 = document.getElementById("Btn2")
+        let box = document.querySelectorAll(".box")
+        let container = document.getElementById("container");
+        let slider1=1;
+        btn1[0].addEventListener("click",()=>{
+            if(btn1[0].innerText=="add"){
+                btn1[0].innerText="remove"
+                fri[0].innerHTML = "Stranger"
+            }
+            else if(btn1[0].innerText=="remove"){
+                btn1[0].innerText="add"
+                fri[0].innerHTML = "Friend"
+            }
+        })
+
+        btn1[1].addEventListener("click",()=>{
+            if(btn1[1].innerText=="add"){
+                btn1[1].innerText="remove"
+                fri[1].innerHTML = "Stranger"
+            }
+            else if(btn1[1].innerText=="remove"){
+                btn1[1].innerText="add"
+                fri[1].innerHTML = "Friend"
+            }
+        })
+
+        btn1[2].addEventListener("click",()=>{
+            if(btn1[2].innerText=="add"){
+                btn1[2].innerText="remove"
+                fri[2].innerHTML = "Stranger"
+            }
+            else if(btn1[2].innerText=="remove"){
+                btn1[2].innerText="add"
+                fri[2].innerHTML = "Friend"
+            }
+        })
+
+        btn1[3].addEventListener("click",()=>{
+            if(btn1[3].innerText=="add"){
+                btn1[3].innerText="remove"
+                fri[3].innerHTML = "Stranger"
+            }
+            else if(btn1[3].innerText=="remove"){
+                btn1[3].innerText="add"
+                fri[3].innerHTML = "Friend"
+            }
+        })
+        console.log(box.length);
+        Btn1.addEventListener("click",()=>{
+            container.style.transform = `translateX(-${(slider1-1)*315}px)`;
+            slider1--;
+        })
+        Btn2.addEventListener("click",()=>{
+            if(slider1<box.length){
+                container.style.transform = `translateX(-${slider1*315}px)`
+                slider1++;
+            }
+            else{
+                container.style.transform = `translateX(0px)`
+                slider1=1;
+            }
+        })
+    </script>
+</body>
+
+</html>
