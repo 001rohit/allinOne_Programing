@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <div class="wrapper">
+        <input type="text" id="input1" onkeypress="press()">
+      </div>
+      <script>
+        let res =""
+           function press(){
+            console.log("hellow");
+            res+=event.key
+            console.log(event.code);
+            console.log(event.keyCode);
+            console.log(res);
+           }
+      </script>
+</body>
+</html>

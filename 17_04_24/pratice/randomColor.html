@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height:100vh;
+        }
+        button{
+            padding: 10px;
+            font-size:20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <button id="btn1">click</button>
+    <script>
+        let btn1 = document.getElementById("btn1")
+        btn1.addEventListener("click",()=>{
+            let randome = "1234567890"
+            let code = "#"
+            for(let i=1;i<=6;i++){
+                let colorCode = randome[Math.floor(Math.random()*randome.length)]
+              code+=colorCode  
+            }
+        document.body.style.background = code
+       })
+    </script>
+</body>
+</html>
