@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis illo ipsa tempore quibusdam quidem voluptate quasi voluptatum reiciendis iure ipsam!</p>
+    <button id="btn">Click</button>
+    <script>
+        let count=1;
+        let btn = document.getElementById("btn")
+        let para = document.querySelector("p")
+        btn.addEventListener("click",()=>{
+            count++;
+            if(count%2==0){
+              para.style.display ="none"
+            }
+            else{
+                para.style.display = "block"
+            }
+            // para.style.display = "none"
+        })
+
+        // btn.addEventListener("dblclick",()=>{
+        //     para.style.display = "block"
+        // })
+        // btn.addEventListener("mouseover",()=>{
+        //     para.style.display = "none"
+        // })
+        // btn.addEventListener("mouseleave",()=>{
+        //     para.style.display = "block"
+        // })
+
+    </script>
+</body>
+</html>

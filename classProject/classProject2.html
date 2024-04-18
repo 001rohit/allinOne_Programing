@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            height:55px;
+            background: orange;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 5px;
+            cursor: pointer;
+        }
+        h1{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>i am happy</h1>
+    </div>
+    <div class="box">
+        <h1>i am very interested person</h1>
+    </div>
+    <div class="box">
+        <h1>i am lonely person</h1>
+    </div>
+    <div class="box">
+        <h1>i am accpet only trueth</h1>
+    </div>
+    <div class="box">
+        <h1>i am always believe in real things</h1>
+    </div>
+    <div id="root"></div>
+    <script>
+        let box = document.querySelectorAll(".box");
+        let root = document.getElementById("root");
+        let data=[
+            {img:"./img1.jpg"},
+        ]
+        let text1;
+        box.forEach((item)=>{
+            let div = document.createElement("div")
+            // text1 = item.innerText
+            item.addEventListener("click",()=>{
+                data.forEach((item1)=>{
+                    let data1 = item1.img
+                    div.innerHTML = `<img src=${data1}/>`
+                    root.appendChild(div)
+                })
+            })
+        })
+        
+    </script>
+</body>
+</html>

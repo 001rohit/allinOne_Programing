@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 30px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .movie-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* flex-direction: column; */
+            height: 55vh;
+        }
+
+        .box-size {
+            display: flex;
+            width: 1300px;
+            background: #000;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+        #container {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            max-width: 700px;
+            background: #000;
+            /* overflow: hidden; */
+            transition: all 0.5s;
+        }
+
+        .movieBox {
+            border: 1px solid black;
+            min-width: 255px;
+            height: 350px;
+            margin: 16px;
+            text-align: center;
+            background: white;
+        }
+
+        img {
+            /* width:315px; */
+            width: 100%;
+            height: 290px;
+            object-fit: cover;
+        }
+
+        h1 {
+            font-size: 25px;
+            margin: 0;
+        }
+
+        button {
+            padding: 5px;
+            font-size: 18px;
+            margin: 0 10px;
+            transition: all 0.5s;
+            cursor: pointer;
+        }
+
+        button:hover {
+            transform: scale(1.2);
+        }
+
+        p {
+            margin: 0;
+            font-size: 20px;
+            padding-bottom: 25px;
+        }
+
+        .movieHead {
+            background: #000;
+        }
+
+        .nav {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="movieHead">
+        <div class="nav">
+            <h2>myfavMovie.com</h2>
+            <div class="sidebtn">
+                <button>login</button>
+                <button>Registration</button>
+            </div>
+        </div>
+    </div>
+    <div class="movie-wrapper">
+        <button id="btn1">prev</button>
+        <div class="box-size">
+            <div id="container">
+            </div>
+        </div>
+        <button id="btn2">next</button>
+
+    </div>
+    <div class="category1">
+        <h2>Action</h2>
+        <ul id="list1">
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+        </ul>
+    </div>
+
+    <div class="moveType">
+        <h2>Type :Movie list </h2>
+    </div>
+    <div class="category1">
+        <h2>Horro</h2>
+        <ul id="list1">
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+        </ul>
+    </div>
+
+    <div class="category1">
+        <h2>Adventure</h2>
+        <ul id="list1">
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+        </ul>
+    </div>
+
+    <div class="category1">
+        <h2>romantice</h2>
+        <ul id="list1">
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+        </ul>
+    </div>
+    <script>
+        let data = [
+            { name: "65", image: "https://occ-0-2794-2219.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABbRcl7GTqmLa4j1GssDlDbZLHu-fkKGRoj8x39S-xx5rM744UKgfvtRBF_DJoae3bGe_nFpGCC3ZSzqG1wIjcVma2f_wJkUmz1s.jpg?r=420", rat: 3.0 },
+            { name: "black window", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8PXPBuSIRHQs-ttqlHRAE0M8FLx3_td8VnK2vEgqG4w&s", rat: 4.0 },
+            { name: "civil war", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSesTBiy_w2zLEEnBHECKbIuzJBL0aFn3jXDaNq8kfkzg&s", rat: 1.2 },
+            { name: "outpost", image: "https://i.ytimg.com/vi/eUcmwrKRIyE/maxresdefault.jpg", rat: 3.5 },
+            { name: "Drunken fist", image: "https://i.ytimg.com/vi/_zolKfjtvnc/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBHUv7rNKoN2rZamjNx9M--AcuKBQ", rat: 4.5 },
+        ]
+        let slide = 1;
+        let container = document.getElementById("container");
+        let container1 = document.getElementById("container1");
+        let btn1 = document.getElementById("btn1")
+        let btn2 = document.getElementById("btn2")
+        let name1;
+        let image1;
+        let rat1;
+        let box;
+        function myfirst() {
+            data.forEach((item) => {
+                let div = document.createElement("div");
+                name1 = item.name;
+                image1 = item.image;
+                rat1 = item.rat;
+                div.innerHTML = `
+                <img src=${image1} alt="movei"/>
+                <h1>movie name : ${name1}</h1>
+                <p>ratting: ${rat1}</p>
+                `
+                div.className = "movieBox"
+                container.appendChild(div)
+            })
+            box = document.querySelectorAll(".movieBox");
+
+        }
+        myfirst();
+
+        // btn1.addEventListener("click",()=>{
+        //     container.style.transform = `translateX(-${(slide-1)*410}px)`
+        //     slide--;
+        // })
+
+        // btn2.addEventListener("click",()=>{
+        //     if(slide<box.length){
+        //          container.style.transform = `translateX(-${slide*410}px)`
+        //         slide++;
+        //     }
+        //     else{
+        //         container.style.transform = `translateX(0px)`;
+        //         slide=1;
+        //     }
+        // })
+
+        setInterval(() => {
+            if (slide < box.length) {
+                container.style.transform = `translateX(-${slide * 290}px)`
+                slide++;
+            }
+            else {
+                container.style.transform = `translateX(0px)`;
+                slide = 1;
+            }
+        }, 2000);
+    </script>
+</body>
+
+</html>
