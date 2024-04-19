@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height:100vh;
+            flex-direction: column;
+        }
+        .inputBox{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-wrap: wrap;
+
+            /* justify-content: center; */
+        }
+        input{
+            height:110px;
+            margin: 10px 0;
+            font-size: 2rem;
+            display: flex;
+            align-items: start;
+            font-weight: bold;
+        }
+        button{
+            padding: 10px;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="inputBox">
+            <input type="text" id="val">
+           <button id="btn">Enter</button>
+        </div>
+        <div class="container">
+            <h3>No. of words:<span id="res1"></span></h3>
+            <h3>No. of character:<span id="res2"></span></h3>
+            <h3>Doublicate words:<span id="res3"></span></h3>
+            <h3>Text:<span id="res4"></span></h3>
+        </div>
+    </div>
+    <script>
+        let showRes1 = document.getElementById("res1")
+        let showRes2 = document.getElementById("res2")
+        let showRes3 = document.getElementById("res3")
+        let showRes4 = document.getElementById("res4")
+        let valStore="";
+        let count=1;
+        btn.addEventListener("click",()=>{
+                val = document.getElementById("val").value
+            valStore+=""+val;
+
+            let space2 =" "
+            let val1= valStore.split("")
+            let val2 = valStore.split(" ")
+            
+            let res2="";
+            for(let i=0;i<val1.length;i++){
+                if(space2!=val1[i]){
+                res2+=val1[i]
+                }
+            }
+            
+            showRes4.innerHTML = valStore;
+            res1.innerHTML = val2.length
+            showRes2.innerHTML = res2.length
+           let result = val2.filter((val,index,self)=>{
+            return self.indexOf(val)===index;
+           })
+           showRes3.innerHTML=result.length;
+        })
+        
+    </script>
+</body>
+</html>
