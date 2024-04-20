@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height:80vh;
+        }
+        th{
+            background: gray;
+            color: white;
+            border: 1px solid white;
+        }
+        table,tr,th,td{
+            border-collapse: collapse;
+            padding: 20px;
+            font-size: 20px;
+            text-transform: uppercase;
+        }
+        td{
+            text-align: center;
+            width:150px;
+        }
+    </style>
+</head>
+<body>
+    <table border="1px" class="wrapper" id="root">
+           <tr>
+            <th>id</th>
+            <th>Name</th>
+            <th>address</th>
+            <th>city</th>
+           </tr>
+    </table>
+    <script>
+      let root = document.getElementById("root");
+      let data = [
+        {id:1,name:"rohit",add:"e.w.s-95 kanha kunj",city:"bhopal"},
+        {id:2,name:"yogesh",add:"house no-91 vidisha",city:"vidisha"},
+        {id:3,name:"mukul",add:"house no. 82 ujjain",city:"ujjain"},
+      ]
+      data.forEach((item)=>{
+        let div = document.createElement("tr")
+        let name1 = item.name;
+        let add1 = item.add;
+        let city1 = item.city;
+        let id1 = item.id;
+        div.innerHTML = `
+         <td>${id1}</td>
+        <td>${name1}</td>
+        <td>${add1}</td>
+        <td>${city1}</td>
+        `
+        root.appendChild(div)
+    })
+    </script>
+</body>
+</html>
