@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height:85vh;
+        }
+        .showResult{
+            width:450px;
+            margin: 15px 0;
+            text-align: center;
+            padding:10px 15px;
+            /* width:350px; */
+            border: 1px solid black;
+        }
+        input{
+            padding: 10px;
+        }
+        #btn{
+            padding: 7px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="inputBox">
+            <input type="text" id="inputVal">
+            <button id="btn">click</button>
+        </div>
+        <div class="showResult">
+            <h2 id="showText"></h2>
+            <h1>No. of total words: <span id="showRes1"></span></h1>
+            <h1>No. of total character: <span id="showRes2"></span></h1>
+            <h1>No. of Duplicates :<span id="showRes3"></span></h1>
+        </div>
+    </div>
+    <script>
+        let showRes1 = document.getElementById("showRes1");
+        let showRes2 = document.getElementById("showRes2");
+        let showRes3 = document.getElementById("showRes3");
+        let showText = document.getElementById("showText")
+        let storeVal1;
+        let storeVal2;
+        let finalRes1="";
+        let finalRes2="";
+        let spaceRemove=" ";
+        let btn = document.getElementById("btn");
+        btn.addEventListener("click", () => {
+            let inputVal = document.getElementById("inputVal").value
+            storeVal1 = inputVal.split("")
+            storeVal2 = inputVal.split(" ")
+            console.log(storeVal2);
+
+            for(let i=0;i<storeVal1.length;i++){
+                if(spaceRemove!=storeVal1[i]){
+                    finalRes1+=storeVal1[i]
+                }
+            }
+            showRes1.innerHTML = finalRes1.length
+            showRes2.innerHTML = storeVal2.length
+            
+           let uniqu = storeVal2.filter((val,index,self)=>{
+                return self.indexOf(val)==index; 
+            })
+            showRes3.innerHTML = uniqu.length;
+            showText.innerHTML = "Show Text : "+inputVal;
+        })
+    </script>
+</body>
+
+</html>
