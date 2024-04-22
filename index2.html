@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height:100vh;
+            transition: all 1s;
+        }
+        #emojiBox{
+            font-size:7rem;
+            margin-bottom:5px;
+        }
+        button{
+            padding: 10px;
+            font-size: 20px;
+            transition: all 0.5s;
+            text-transform: uppercase;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="emojiBox">🙂</div>
+   <button id="btn">tuch me !</button>
+    <script>
+       let btn = document.getElementById("btn");
+       let emoji1 = document.getElementById("emojiBox")
+    //    btn.addEventListener("click",()=>{
+    //     console.log("Hellow");
+    //    })
+    btn.addEventListener("mouseover",()=>{
+        emoji1.innerHTML = "😫";
+        btn.innerHTML = "Don't tuch me!";
+        document.body.style.background = "black";
+        emoji1.style.boxShadow = "1px 5px 10px red";
+       }) 
+       btn.addEventListener("mouseout",()=>{
+        emoji1.innerHTML = "🙂";
+                btn.innerHTML = "tuch me!";
+        document.body.style.background = "white";
+        emoji1.style.boxShadow = "none";
+
+
+       }) 
+    </script>
+</body>
+</html>

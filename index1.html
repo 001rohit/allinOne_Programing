@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,td,th,tr{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+       <div class="wrapper" >
+        <table id="root">
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>city</th>
+                <th>salary</th>
+            </tr>
+        </table>
+       </div>
+       <script>
+            let data =[
+                {id:1,name:"rohit",city:"bhopal",salary:"2000/-"},
+                {id:2,name:"yogesh",city:"vidisha",salary:"4000/-"},
+                {id:3,name:"mukul",city:"ujjain",salary:"3000/-"},
+            ]
+            let root = document.getElementById("root");
+            let id1;
+            let name1;
+            let city1;
+            let salary1;
+            data.forEach((item)=>{
+                let div = document.createElement("tr");
+
+                 id1 = item.id;
+                 name1 = item.name;
+                 city1 = item.city;
+                 salary1 = item.salary;
+
+                div.innerHTML = `
+                <td>${id1}<td>
+                <td>  ${name1}</td>
+                <td>${city1}</td>
+                <td>${salary1}</td>
+                `
+                root.appendChild(div);
+            })
+       </script>
+</body>
+</html>
