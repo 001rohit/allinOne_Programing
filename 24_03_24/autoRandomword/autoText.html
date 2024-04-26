@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height:100vh;
+            background: #000;
+        }
+        #root{
+            color: orange;
+            font-size:2rem;
+        }
+    </style>
+</head>
+<body>
+      <div id="root">
+        <h1>javascript is<span id="text1"> </span></h1>
+      </div>
+       <script>
+           setInterval(()=>{
+               let btn = document.getElementById("btn")
+               let array = ["fun","awesome","fantastic","great"]
+               let text = document.getElementById("text1")
+            let random = array[Math.floor(Math.random()*array.length)]
+            let val = ""
+            for(let i = 1; i<=1;i++){
+                val+=random
+            }
+            text.innerHTML= " "+val
+            text.style.color = "lime"
+            text.style.paddingBottom = "5px"
+            text.style.borderBottom ="3px solid white"
+            
+           }, 700);
+       </script>
+</body>
+</html>
