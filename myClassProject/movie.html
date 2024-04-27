@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box-size{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            height:50vh;
+            flex-direction: column;
+        }
+        #root{
+            max-width:650px;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            background: #000;
+            overflow: hidden;
+            padding: 10px 0;
+        }
+        .box{
+            min-width:280px;
+            height:270px;
+            margin: 10px;
+            border: 1px  solid black;
+           padding: 10px;
+           text-align: center;
+           background: white;
+        }
+        img{
+            width:100%;
+            height:230px;
+            object-fit: cover;
+        }
+        .nav1{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: hsl(200, 89%, 62%);
+            height:90px
+        }
+        #header-contain{
+            margin-left: 20px;
+            color: white;
+        }
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height:50px;
+            background: #000;
+        }
+        ul li{
+            width:100px;
+            list-style: none;
+            transition: all 0.5s;
+            text-align: center;
+            margin: 5px;
+            padding: 10px;
+        }
+        ul li:hover{
+            background: white;
+        }
+        li a{
+            font-size: 20px;
+            color: brown;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        #log,#reg{
+            padding: 10px;
+        }
+        input{
+            width:230px;
+            height:10px;
+            padding: 10px;
+            font-size:20px;
+        }
+        .sub{
+            padding: 8px;
+        }
+      .btn1 button{
+        margin: 10px 0;
+        font-size:20px
+      }
+      .box1 h1{
+        color: white;
+        text-transform: uppercase;
+      }
+      .box1,.row1{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 10px;
+        width:250px
+
+      }
+      footer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background: #000;
+        padding: 10px;
+      }
+    a i{
+        margin:10px;
+        color: white;
+        font-size: 25px;
+
+      }
+      .footer-contain{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .row1 a{
+        padding: 10px;
+        font-size: 20px;
+        text-decoration: none;
+        transition: all 0.5s;
+      }
+      .row1 a:hover{
+        background: white;
+        color: brown;
+      }
+      .face{
+        color: blue;
+      }
+      .youtub{
+        color: brown;
+      }
+    #write{
+        text-align: center;
+        color: white;
+        font-size: 22px;
+      }
+      #nex,#pre{
+        padding: 10px;
+      }
+    </style>
+</head>
+<body>
+       <div class="nav1">
+        <div id="header-contain">
+            <h1>Action-Movie</h1>
+        </div>
+        <div class="input">
+            <input type="text">
+             <button class="sub">click</button>
+        </div>
+        <div class="btn">
+            <button id="log">LogIn</button>
+            <button id="reg">Registration</button>
+        </div>
+       </div>
+       
+       <nav>
+         <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Category</a></li>
+            <li><a href="#">New</a></li>
+            <li><a href="#">about</a></li>
+            <li><a href="#">contact</a></li>
+         </ul>
+       </nav>
+       <div class="box-size">
+           <div id="root"></div>
+           <!-- <div class="btn1">
+            <button id="pre">prev</button>
+            <button id="nex">next</button>
+        </div> -->
+       </div>
+         <footer>
+            <div class="footer-contain">
+                <div class="box1">
+                    <h1>type1</h1>
+                    <div class="row1">
+                        <a href="#">action movie</a>
+                        <a href="#">action movie</a>
+                        <a href="#">action movie</a>
+                    </div>
+                </div>
+    
+                <div class="box1">
+                    <h1>type2</h1>
+                    <div class="row1">
+                        <a href="#">Horror movie</a>
+                        <a href="#">Horror movie</a>
+                        <a href="#">Horror movie</a>
+                    </div>
+                </div>
+    
+                <div class="box1">
+                    <h1>type3</h1>
+                    <div class="row1">
+                        <a href="#">Comedy movie</a>
+                        <a href="#">Comedy movie</a>
+                        <a href="#">Comedy movie</a>
+                    </div>
+                </div>
+            </div>
+            <div class="link"><a href="#">
+                <i class="fa-brands fa-facebook-f face"></i>
+            </a>
+            <a href="#">
+                <i class="fa-brands fa-youtube youtub"></i>
+            </a>
+            <a href="#"><i class="fa-brands fa-x-twitter twitter"></i></a>
+            <a href="#">
+                <i class="fa-brands fa-square-whatsapp"></i>
+            </a>
+            <p id="write">@copywrite</p>
+        </div>
+         </footer>
+    <script>
+        let root = document.getElementById("root")
+        let list = document.querySelectorAll("li")
+        let body = document.body
+        
+        data =[
+            {id:1,name:"final score",img1:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIlHMp3FbXojausxHgmdW_cCJSS3q95dXcKp1mthAV8nCGAw9osrpCfa_RoVivXS3PJR0&usqp=CAU",rate:4.3},
+
+            {id:2,name:"false step",img1:"https://i.pinimg.com/originals/66/20/a8/6620a8423d1146595b44ba3bc804ac7e.jpg",rate:4.3},
+
+            {id:3,name:"fast & furious 5",img1:"https://i.pinimg.com/originals/75/99/c4/7599c4b82a9fa787cf7941a67d8fcc77.jpg",rate:4.2},
+
+            {id:4,name:"Ambush",img1:"https://m.media-amazon.com/images/M/MV5BYjkxZTE0ZGYtYzE1OS00YTliLWE0YTItZmZjZWI0MDVhM2UzXkEyXkFqcGdeQXVyMzEzMTA2MjA@._V1_.jpg",rate:3.2},
+        ]
+        data.forEach(element => {
+            let div  = document.createElement("div");
+             let id1 = element.id;
+             let name1 = element.name;
+             let img1  = element.img1;
+             let rat1 = element.rate;
+           div.className = "box"
+           div.innerHTML = `
+            <img src=${img1} alt ="img"/>
+            <h2>${name1}</h2>
+            <p>${rat1}</p>
+           `
+           root.appendChild(div)
+        });
+
+        
+        list.forEach((item)=>{
+            item.addEventListener("click",()=>{
+                alert("you click on nav bar click")
+            })
+        })
+
+        // body.addEventListener("click",()=>{
+        //     let list1 = ["red","green","blue","lime","cyan"]
+        //     for(let i=1;i<=1;i++){
+        //         let randomColor = list1[Math.floor(Math.random()*list1.length)]
+        //     }
+        //     body.style.background = randomColor
+        //     console.log("hellow");
+        // })
+
+        let box = document.querySelectorAll(".box")
+       
+        let pre = document.getElementById("pre")
+        let nex = document.getElementById("nex")
+        
+        let slide1=1
+        console.log(box);
+
+        pre.addEventListener("click",()=>{
+          root.style.transform = `${(slide1-1)*350}px`
+        })
+        
+        nex.addEventListener("click",()=>{
+            if(slide1<box.length){
+            root.style.transform = `translateX${slide*280}px`
+            slide1++
+         }
+         else{
+            root.style.transform = `translateX${0}px`
+            slide1=1
+         }
+        })
+
+        
+    </script>
+</body>
+</html>
